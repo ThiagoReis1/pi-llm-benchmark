@@ -99,20 +99,36 @@ def generate_tables(records, execution, algorithm_ranking, individual, metadata)
     decimal_groups = group_configurations(eligible_records, "decimal")
     invalid_groups = group_configurations(eligible_records, "invalid")
 
-    config_rows = [
-        ("Arquivos C de origem", len({r.get("llm_id") for r in records})),
-        ("Unidade de análise", "método implementado + precisão"),
-        ("Casas decimais", "1--18"),
-        ("Repetições por configuração (apenas tempo)", metadata.get("repetitions", "---")),
-        ("Resultados de correção", "uma vez por método implementado e precisão"),
-        ("Tempo limite por processo", f"{metadata.get('timeout_seconds', '---')} s"),
-        ("Limite de memória", f"{metadata.get('memory_mb', '---')} MB"),
-        ("Execuções paralelas", metadata.get("workers", "---")),
-        ("Compilador", metadata.get("compiler", "---")),
+    decimal_records = [
+        r for r in records
+        if r.get("case_type") == "decimal" and 1 <= int(r.get("digits", -1)) <= 18
     ]
-    config = [r"\begin{tabular}{lr}", r"\toprule", r"Parâmetro & Valor\\", r"\midrule"]
+    total_sources = len({r.get("llm_id") for r in decimal_records})
+    total_implementations = len({(r.get("llm_id"), r.get("algorithm")) for r in decimal_records})
+    total_precisions = len({r.get("digits") for r in decimal_records})
+    total_configurations = total_implementations * total_precisions
+    config_rows = [
+        ("Arquivos C", str(total_sources)),
+        ("Implementações", str(total_implementations)),
+        ("Precisões", "18 (1--18)"),
+        ("Configurações", f"{total_implementations} x 18 = {total_configurations}"),
+        ("Correção", "1 por configuração"),
+        ("Tempo", f"{metadata.get('repetitions', '---')} execuções"),
+        ("Limite de tempo", f"{metadata.get('timeout_seconds', '---')} s"),
+        ("Memória", f"{metadata.get('memory_mb', '---')} MB"),
+        ("Execuções paralelas", metadata.get("workers", "---")),
+        ("Compilador", f"GCC {metadata.get('compiler_version', '13.3.0')}"),
+    ]
+    config = [
+        r"\begingroup",
+        r"\small",
+        r"\setlength{\tabcolsep}{4pt}",
+        r"\renewcommand{\arraystretch}{1.12}",
+        r"\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}X@{}}",
+        r"\toprule", r"Parâmetro & Valor\\", r"\midrule",
+    ]
     config += [f"{tex(k)} & {tex(v)}" + r"\\" for k, v in config_rows]
-    config += [r"\bottomrule", r"\end{tabular}"]
+    config += [r"\bottomrule", r"\end{tabularx}", r"\endgroup"]
     write_table("experimental_configuration.tex", "\n".join(config))
 
     algorithm_rows = []

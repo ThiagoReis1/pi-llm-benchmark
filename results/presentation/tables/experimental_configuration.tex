@@ -1,15 +1,21 @@
-\begin{tabular}{lr}
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}X@{}}
 \toprule
 Parâmetro & Valor\\
 \midrule
-Arquivos C de origem & 4\\
-Unidade de análise & método implementado + precisão\\
-Casas decimais & 1--18\\
-Repetições por configuração (apenas tempo) & 5\\
-Resultados de correção & uma vez por método implementado e precisão\\
-Tempo limite por processo & 20.0 s\\
-Limite de memória & 1024 MB\\
+Arquivos C & 4\\
+Implementações & 20\\
+Precisões & 18 (1--18)\\
+Configurações & 20 x 18 = 360\\
+Correção & 1 por configuração\\
+Tempo & 5 execuções\\
+Limite de tempo & 20.0 s\\
+Memória & 1024 MB\\
 Execuções paralelas & 4\\
-Compilador & gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\\
+Compilador & GCC 13.3.0\\
 \bottomrule
-\end{tabular}
+\end{tabularx}
+\endgroup
