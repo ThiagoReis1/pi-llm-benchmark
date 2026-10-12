@@ -31,43 +31,78 @@ pi-llm-benchmark/
 │   └── example_metadata.json       # Exemplo do formato de metadados
 ├── prompts/
 │   └── benchmark_prompt.txt         # Prompt oficial usado nas coletas
-├── submissions/                    # Código e respostas coletadas por plataforma
-├── results/                        # Dados brutos, tabelas, figuras e logs
-│   ├── presentation/               # Tabelas LaTeX, figuras PNG e índice humano
+├── submissions/                    # Entradas: respostas e códigos C coletados
+├── tools/                          # Código gerador de tabelas e figuras
+│   ├── generate_presentation.py
+│   └── generate_scientific_figures.py
+├── results/                        # Saídas geradas e evidências da rodada
+│   ├── presentation/               # Tabelas LaTeX e figuras
 │   └── logs/                       # Evidências individuais por execução
-├── run_benchmark.py                # Pipeline completo, independente do sistema operacional
+├── setup_project.py                # Inicialização e limpeza multiplataforma
+├── run_benchmark.py                # Pipeline completo
 ├── requirements.txt
 └── .gitignore
 ```
 
 Os nomes dos módulos descrevem diretamente sua responsabilidade. Não há um segundo script que replique a preparação de respostas: `prepare_submission.py` concentra a transformação determinística e `prepare_interactive.py` fornece apenas a interface interativa.
 
-## Requisitos
+## Requisitos e instalação
 
-- Python 3.11 ou superior;
-- GCC com suporte a C11 (`gcc` no Linux/WSL ou GCC/MinGW no Windows);
-- ambiente virtual Python recomendado;
-- dependências de `requirements.txt`.
+É necessário ter Python 3.11 ou superior e GCC com suporte a C11 (`gcc` no
+Linux/WSL ou GCC/MinGW no Windows). O arquivo `setup_project.py` faz o restante:
 
-### Linux, macOS ou WSL
+1. cria `.venv` se o ambiente virtual ainda não existir;
+2. instala `requirements.txt` dentro de `.venv`;
+3. cria as pastas de `submissions/` e `results/`.
+
+Se `.venv` já existir e contiver `pyvenv.cfg` e o executável Python, ele é
+reutilizado; não é recriado a cada execução.
+
+Em qualquer sistema, execute na raiz do projeto:
 
 ```bash
-sudo apt update
-sudo apt install -y python3 python3-venv python3-pip gcc
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
+python setup_project.py
 ```
 
-### Windows PowerShell
+O script usa o Python do ambiente virtual para instalar as dependências e, ao
+final, mostra o comando de ativação. Ele nunca abre uma nova sessão de
+PowerShell ou Bash. Execute o comando mostrado no mesmo terminal para ativar o
+ambiente.
 
-Instale Python e GCC/MinGW, garantindo que `gcc` esteja no `PATH`:
+Para remover somente o ambiente virtual, sem apagar código, submissões ou
+resultados:
 
-```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+```bash
+python setup_project.py --remove-venv
 ```
+
+Para removê-lo e criá-lo novamente:
+
+```bash
+python setup_project.py --recreate-venv
+```
+
+Há duas limpezas de dados diferentes:
+
+- `--clean-results`: remove os JSONs da rodada, `results/logs/`, tabelas
+  e figuras geradas. Mantém `submissions/`, para repetir a análise dos mesmos
+  códigos coletados.
+- `--reset`: executa a limpeza completa: remove os resultados, todos os
+  logs, tabelas, figuras e também as tentativas dentro de `submissions/`.
+
+Portanto, os logs são apagados no `--reset`, pois eles ficam dentro de
+`results/logs/`. Não existe uma opção separada para apagar somente submissões.
+
+Os scripts de ativação são criados automaticamente pelo `venv` e usados pelo
+próprio `setup_project.py`:
+
+```text
+Windows: .venv/Scripts/Activate.ps1
+Linux/WSL: .venv/bin/activate
+```
+
+Como um processo Python não consegue alterar o shell pai, a ativação é feita
+manualmente no terminal atual com o comando exibido pelo setup.
 
 ## Coleta de respostas
 
@@ -100,6 +135,28 @@ python -m pytest -q
 
 Os testes verificam o parser dos algoritmos, a cobertura de 1 a 18 casas, a métrica decimal, a flag específica do MinGW, a exclusão do tempo de compilação e a consolidação das repetições em um único desfecho por configuração. Divergências entre saídas repetidas são cobertas como instabilidade, não como votação por maioria.
 
+## Inicialização limpa e manutenção
+
+A estrutura pode ser criada em Linux, macOS, WSL ou Windows PowerShell com o mesmo comando:
+
+```bash
+python setup_project.py
+```
+
+Para apagar somente os resultados gerados e começar uma nova rodada, preservando os códigos coletados:
+
+```bash
+python setup_project.py --clean-results
+```
+
+Para apagar resultados e também todas as tentativas coletadas:
+
+```bash
+python setup_project.py --reset
+```
+
+Sem ``, nenhuma operação destrutiva é executada. O script preserva as pastas-base e os arquivos `.gitkeep`.
+
 ## Execução do benchmark
 
 ### Qualquer sistema com Python e GCC
@@ -110,7 +167,7 @@ O mesmo comando é usado em Linux, macOS, WSL e Windows PowerShell:
 python run_benchmark.py --repetitions 5 --timeout 20 --memory-mb 1024 --workers 4
 ```
 
-O fluxo executa validação das submissões, testes automatizados, smoke test, benchmark completo, registro do ambiente da rodada. Não são necessários scripts Bash ou PowerShell.
+O fluxo executa validação das submissões, testes automatizados, smoke test, benchmark completo, registro do ambiente da rodada e a geração da apresentação. Não são necessários scripts Bash ou PowerShell. Os geradores ficam em `tools/`; nenhum código gerador fica dentro de `results/`.
 
 Para uma execução rápida da infraestrutura:
 
@@ -150,7 +207,7 @@ results/
 
 Os logs individuais preservam comandos, saídas, tempos, códigos de retorno e evidências de cada execução. Resultados, rankings e logs não são ignorados pelo `.gitignore`.
 
-A pasta `results/presentation/` contém uma camada de leitura humana gerada automaticamente a partir dos JSONs: tabelas LaTeX em `tables/`, incluindo `formula_catalog_chatgpt.tex`, `formula_catalog_claude.tex`, `formula_catalog_gemini.tex` e `formula_catalog_grok.tex` para copiar e colar no artigo, figuras PNG/PDF em `figures/` e `presentation_manifest.json`. Todas as linhas das figuras e tabelas de resultados identificam método e arquivo de origem, sem barras ou médias agregadas por IA. Desfechos são contados uma vez por método–precisão; as repetições aparecem somente nas medianas temporais. Logs e dados brutos históricos permanecem preservados. Essa pasta é regenerada por `python results/presentation/generate_presentation.py` e não deve ser preenchida manualmente.
+A pasta `results/presentation/` contém somente saídas geradas: tabelas LaTeX em `tables/`, figuras PNG/PDF em `figures/` e `presentation_manifest.json`. Todas as linhas das figuras e tabelas de resultados identificam método e arquivo de origem. Essa pasta é regenerada por `python tools/generate_presentation.py` e não deve conter código-fonte gerador nem ser preenchida manualmente.
 
 O ranking exportado em `algorithm_ranking.json` é por método implementado, mantendo algoritmo e origem do arquivo em cada linha. Não é produzido ranking agregado por IA. O `.gitignore` ignora somente ambientes virtuais, caches, segredos locais e executáveis temporários. Portanto, os arquivos de `results/` e o restante da evidência experimental podem ser versionados normalmente.
 
@@ -161,7 +218,8 @@ O ranking exportado em `algorithm_ranking.json` é por método implementado, man
 - nomes de módulos, diretórios e arquivos são descritivos e estáveis;
 - cada módulo possui uma responsabilidade principal;
 - o código coletado em `submissions/` não deve ser editado manualmente;
-- resultados devem ser regenerados pelo runner, nunca alterados à mão;
+- resultados devem ser regenerados pelos scripts em `tools/`, nunca alterados à mão;
+- código gerador fica em `tools/`; `results/` contém somente saídas e evidências;
 - novas alterações devem ser acompanhadas por testes quando modificarem o contrato.
 
 ## Reprodutibilidade e limitações
