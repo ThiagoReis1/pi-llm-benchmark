@@ -1,0 +1,26 @@
+# Ambientes e caches Python locais
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Configurações locais e segredos
+.env
+.env.*
+api_config.json
+
+# Artefatos temporários de compilação C
+*.o
+*.out
+*.exe
+submissions/**/attempt_*/pi_benchmark
+submissions/**/attempt_*/pi_benchmark.exe
+submissions/**/attempt_*/.test_pi
+submissions/**/attempt_*/.test_pi.exe
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+{
+  "llm_id": "chatgpt",
+  "platform": "ChatGPT",
+  "prompt_id": "benchmark_prompt_c_single_markdown_block",
+  "prompt_sha256": "24176b7827151e9ba319e3ea05a0b33403d8a3e43556896356cf3cd583b2133d",
+  "attempt": 1,
+  "extraction_mode": "raw_response",
+  "manual_logic_changes": false,
+  "response_file": "response_original.txt",
+  "response_original_sha256": "e0111ca6f0c64a72a98474322f6315cc129c5e1bff50a46d5e18a8df77419e98",
+  "submission_sha256": "e0111ca6f0c64a72a98474322f6315cc129c5e1bff50a46d5e18a8df77419e98"
+}

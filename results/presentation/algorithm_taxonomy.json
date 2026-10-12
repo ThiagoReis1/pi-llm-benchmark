@@ -1,0 +1,34 @@
+{
+  "families": [
+    {
+      "family": "Identidades com séries de arco-tangente",
+      "examples_latex": "\\texttt{machin}, \\texttt{machin7}, \\texttt{gauss}, \\texttt{takano}, \\texttt{atan23}, \\texttt{hutton}, \\texttt{twinarctan}",
+      "operation_latex": "Combina identidades de \\texttt{arctan}; argumentos fixos de módulo menor que 1 produzem convergência geométrica."
+    },
+    {
+      "family": "Série hipergeométrica / razão fatorial",
+      "examples_latex": "\\texttt{chudnovsky}, \\texttt{ramanujan}",
+      "operation_latex": "Usa termos fatoriais/hipergeométricos e convergência rápida, com inversão quando a série representa uma expressão proporcional a \\(1/\\pi\\)."
+    },
+    {
+      "family": "Série de razão fatorial/duplo-fatorial",
+      "examples_latex": "\\texttt{euler}",
+      "operation_latex": "Soma termos positivos de razão aproximadamente constante; a classificação segue a fórmula efetivamente implementada."
+    },
+    {
+      "family": "Transformação da série Gregory--Leibniz",
+      "examples_latex": "\\texttt{euler}",
+      "operation_latex": "Aplica diferenças finitas para acelerar a série alternada de Gregory--Leibniz."
+    },
+    {
+      "family": "Série de potência do arco-seno",
+      "examples_latex": "\\texttt{newton}",
+      "operation_latex": "Expande a função arco-seno em série de potências para obter \\(\\pi\\)."
+    },
+    {
+      "family": "Série alternada algébrica de Nilakantha",
+      "examples_latex": "\\texttt{nilakantha} (Gemini, Grok)",
+      "operation_latex": "Soma correções racionais alternadas cujo termo é \\(\\Theta(k^{-3})\\); o resto decai algebricamente."
+    }
+  ]
+}

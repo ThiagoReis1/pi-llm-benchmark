@@ -1,0 +1,361 @@
+```c
+/*
+ * Five algorithms (series-based only, ordered by practicality for 1..18 digits):
+ * 1. nilakantha - Nilakantha series (cubic convergence). Simple rational terms, stable,
+ *    good speed/accuracy trade-off; ~O(10^6) terms suffice for 18 digits.
+ * 2. machin     - Machin formula 4*atan(1/5)-atan(1/239). Classic, extremely fast
+ *    because of the small arguments; few dozen terms for 18 digits.
+ * 3. gauss      - Gauss formula 12*atan(1/18)+8*atan(1/57)-5*atan(1/239). Even smaller
+ *    arguments, excellent convergence and numerical stability.
+ * 4. hutton     - Hutton formula 2*atan(1/3)+atan(1/7). Moderate arguments, fast,
+ *    simple two-series combination, fully reproducible.
+ * 5. twinarctan - atan(1/2)+atan(1/3). Pedagogically simplest multi-arctan identity,
+ *    still converges quickly enough for 18 digits.
+ *
+ * Precision strategy: all arithmetic performed with a fixed-point BigInt scaled by
+ * 10^(digits+8). Limbs in base 1e9, pure integer operations (no floating-point
+ * rounding). Final rounding to exactly N decimal places uses an extra guard digit.
+ * Limitations: Nilakantha needs many more iterations than the arctan methods;
+ * intermediate limb count is fixed for the 1..18 range.
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
+#include <ctype.h>
+
+#define BASE 1000000000U
+#define MAX_LIMBS 8
+#define GUARD 8
+
+typedef struct {
+    uint32_t d[MAX_LIMBS];
+    int n;
+} BigInt;
+
+static void bi_zero(BigInt *a) {
+    memset(a->d, 0, sizeof(a->d));
+    a->n = 1;
+}
+
+static void bi_set_u64(BigInt *a, uint64_t v) {
+    bi_zero(a);
+    a->d[0] = (uint32_t)(v % BASE);
+    a->d[1] = (uint32_t)(v / BASE);
+    a->n = a->d[1] ? 2 : 1;
+}
+
+static int bi_is_zero(const BigInt *a) {
+    for (int i = 0; i < a->n; i++)
+        if (a->d[i]) return 0;
+    return 1;
+}
+
+static int bi_cmp(const BigInt *a, const BigInt *b) {
+    if (a->n != b->n) return a->n - b->n;
+    for (int i = a->n - 1; i >= 0; i--) {
+        if (a->d[i] != b->d[i])
+            return (a->d[i] > b->d[i]) ? 1 : -1;
+    }
+    return 0;
+}
+
+static void bi_add(BigInt *r, const BigInt *a, const BigInt *b) {
+    BigInt t;
+    bi_zero(&t);
+    uint64_t carry = 0;
+    int m = a->n > b->n ? a->n : b->n;
+    for (int i = 0; i < m || carry; i++) {
+        uint64_t s = carry;
+        if (i < a->n) s += a->d[i];
+        if (i < b->n) s += b->d[i];
+        t.d[i] = (uint32_t)(s % BASE);
+        carry = s / BASE;
+        t.n = i + 1;
+    }
+    *r = t;
+}
+
+static void bi_sub(BigInt *r, const BigInt *a, const BigInt *b) {
+    /* assumes a >= b */
+    BigInt t;
+    bi_zero(&t);
+    int64_t borrow = 0;
+    for (int i = 0; i < a->n; i++) {
+        int64_t s = (int64_t)a->d[i] - borrow;
+        if (i < b->n) s -= b->d[i];
+        if (s < 0) {
+            s += BASE;
+            borrow = 1;
+        } else {
+            borrow = 0;
+        }
+        t.d[i] = (uint32_t)s;
+        t.n = i + 1;
+    }
+    while (t.n > 1 && t.d[t.n - 1] == 0) t.n--;
+    *r = t;
+}
+
+static void bi_mul_small(BigInt *r, const BigInt *a, uint32_t m) {
+    BigInt t;
+    bi_zero(&t);
+    uint64_t carry = 0;
+    for (int i = 0; i < a->n || carry; i++) {
+        uint64_t p = carry;
+        if (i < a->n) p += (uint64_t)a->d[i] * m;
+        t.d[i] = (uint32_t)(p % BASE);
+        carry = p / BASE;
+        t.n = i + 1;
+    }
+    *r = t;
+}
+
+static uint32_t bi_div_small(BigInt *r, const BigInt *a, uint32_t m) {
+    BigInt t;
+    bi_zero(&t);
+    uint64_t rem = 0;
+    for (int i = a->n - 1; i >= 0; i--) {
+        rem = rem * BASE + a->d[i];
+        t.d[i] = (uint32_t)(rem / m);
+        rem %= m;
+    }
+    t.n = a->n;
+    while (t.n > 1 && t.d[t.n - 1] == 0) t.n--;
+    *r = t;
+    return (uint32_t)rem;
+}
+
+static void bi_copy(BigInt *dst, const BigInt *src) {
+    *dst = *src;
+}
+
+/* Compute scaled arctan(1/m) = atan(1/m) * 10^prec  (integer)
+ * Returns number of terms used. */
+static int arctan_inv(BigInt *res, uint32_t m, int prec) {
+    BigInt term, x2, sum, tmp;
+    bi_zero(&sum);
+    /* term0 = 10^prec / m */
+    bi_set_u64(&term, 1);
+    for (int i = 0; i < prec; i++)
+        bi_mul_small(&term, &term, 10);
+    bi_div_small(&term, &term, m);
+
+    bi_copy(&sum, &term);
+    /* x2 = 1/(m*m) */
+    uint32_t mm = m * m;
+    int k = 1;
+    int sign = -1;
+    int iters = 1;
+
+    while (!bi_is_zero(&term)) {
+        /* term *= (2k-1) / (2k+1) / (m*m)  but sequential:
+           term = term * (2k-1) / (2k+1) / mm   wait correct recurrence:
+           next = - prev * x^2 * (2k-1)/(2k+1)
+           here x=1/m, so *1/mm * (2k-1)/(2k+1) */
+        bi_mul_small(&tmp, &term, (uint32_t)(2 * k - 1));
+        bi_div_small(&tmp, &tmp, (uint32_t)(2 * k + 1));
+        bi_div_small(&term, &tmp, mm);
+
+        if (bi_is_zero(&term)) break;
+
+        if (sign > 0)
+            bi_add(&sum, &sum, &term);
+        else
+            bi_sub(&sum, &sum, &term);
+
+        sign = -sign;
+        k++;
+        iters++;
+        if (iters > 100000) break; /* safety */
+    }
+    bi_copy(res, &sum);
+    return iters;
+}
+
+/* Nilakantha: pi = 3 + sum_{k=1}^inf (-1)^{k+1} * 4 / (2k*(2k+1)*(2k+2)) */
+static int nilakantha(BigInt *res, int prec) {
+    BigInt term, sum, tmp;
+    bi_set_u64(&sum, 3);
+    for (int i = 0; i < prec; i++)
+        bi_mul_small(&sum, &sum, 10);
+
+    bi_set_u64(&term, 4);
+    for (int i = 0; i < prec; i++)
+        bi_mul_small(&term, &term, 10);
+
+    int sign = 1;
+    int iters = 0;
+    for (uint32_t k = 1; ; k++) {
+        uint64_t den = (uint64_t)(2 * k) * (2 * k + 1) * (2 * k + 2);
+        if (den == 0 || den > UINT32_MAX) {
+            /* overflow guard ? stop */
+            break;
+        }
+        bi_copy(&tmp, &term);
+        bi_div_small(&tmp, &tmp, (uint32_t)den);
+
+        if (bi_is_zero(&tmp)) break;
+
+        if (sign > 0)
+            bi_add(&sum, &sum, &tmp);
+        else
+            bi_sub(&sum, &sum, &tmp);
+
+        sign = -sign;
+        iters++;
+        if (iters > 5000000) break;
+    }
+    bi_copy(res, &sum);
+    return iters;
+}
+
+static void scale_pow10(BigInt *a, int p) {
+    for (int i = 0; i < p; i++)
+        bi_mul_small(a, a, 10);
+}
+
+static int compute_pi(BigInt *out, const char *algo, int prec) {
+    BigInt a, b, c, t;
+    int iters = 0;
+
+    if (strcmp(algo, "nilakantha") == 0) {
+        return nilakantha(out, prec);
+    }
+    if (strcmp(algo, "machin") == 0) {
+        iters += arctan_inv(&a, 5, prec);
+        bi_mul_small(&a, &a, 4);
+        iters += arctan_inv(&b, 239, prec);
+        bi_sub(out, &a, &b);
+        bi_mul_small(out, out, 4);
+        return iters;
+    }
+    if (strcmp(algo, "gauss") == 0) {
+        iters += arctan_inv(&a, 18, prec);
+        bi_mul_small(&a, &a, 12);
+        iters += arctan_inv(&b, 57, prec);
+        bi_mul_small(&b, &b, 8);
+        bi_add(&t, &a, &b);
+        iters += arctan_inv(&c, 239, prec);
+        bi_mul_small(&c, &c, 5);
+        bi_sub(out, &t, &c);
+        bi_mul_small(out, out, 4);
+        return iters;
+    }
+    if (strcmp(algo, "hutton") == 0) {
+        iters += arctan_inv(&a, 3, prec);
+        bi_mul_small(&a, &a, 2);
+        iters += arctan_inv(&b, 7, prec);
+        bi_add(&t, &a, &b);
+        bi_mul_small(out, &t, 4);
+        return iters;
+    }
+    if (strcmp(algo, "twinarctan") == 0) {
+        iters += arctan_inv(&a, 2, prec);
+        iters += arctan_inv(&b, 3, prec);
+        bi_add(&t, &a, &b);
+        bi_mul_small(out, &t, 4);
+        return iters;
+    }
+    return -1;
+}
+
+/* Convert scaled BigInt (value * 10^prec) to decimal string with exactly N digits
+ * after the point, correctly rounded. */
+static void bi_to_decimal(char *buf, size_t buflen, const BigInt *v, int prec, int N) {
+    /* Extract decimal digits */
+    char digs[64];
+    int nd = 0;
+    BigInt tmp;
+    bi_copy(&tmp, v);
+
+    /* We need the integer part + prec fractional digits */
+    while (!bi_is_zero(&tmp) || nd < prec + 2) {
+        uint32_t rem = bi_div_small(&tmp, &tmp, 10);
+        digs[nd++] = (char)('0' + rem);
+        if (nd >= 60) break;
+    }
+    /* digs[0] is least significant */
+    /* Now digs[prec] is the units digit of the integer part (should be 3) */
+
+    /* Rounding: look at digit just after N fractional places */
+    int frac_start = 0; /* digs[0] = 10^{-prec} place */
+    int round_pos = prec - N - 1; /* the digit that decides rounding */
+    int carry = 0;
+    if (round_pos >= 0 && digs[round_pos] >= '5')
+        carry = 1;
+
+    /* Build the rounded digit string from the least significant kept digit */
+    char out[40];
+    int o = 0;
+    for (int i = prec - N; i < prec; i++) {
+        int d = digs[i] - '0' + carry;
+        carry = d / 10;
+        d %= 10;
+        out[o++] = (char)('0' + d);
+    }
+    /* integer part */
+    int ip = digs[prec] - '0' + carry;
+    /* (for pi it stays 3) */
+
+    /* reverse fractional part */
+    char frac[20];
+    for (int i = 0; i < N; i++)
+        frac[i] = out[N - 1 - i];
+    frac[N] = 0;
+
+    snprintf(buf, buflen, "%d.%s", ip, frac);
+}
+
+int main(int argc, char **argv) {
+    const char *algo = NULL;
+    int digits = 10; /* reasonable default */
+
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "--algorithm") == 0 && i + 1 < argc) {
+            algo = argv[++i];
+        } else if (strcmp(argv[i], "--digits") == 0 && i + 1 < argc) {
+            char *end;
+            long d = strtol(argv[++i], &end, 10);
+            if (*end != '\0' || d < 1 || d > 18) {
+                fprintf(stderr, "invalid digits\n");
+                return 1;
+            }
+            digits = (int)d;
+        } else {
+            fprintf(stderr, "invalid argument\n");
+            return 1;
+        }
+    }
+
+    if (!algo) {
+        fprintf(stderr, "missing --algorithm\n");
+        return 1;
+    }
+
+    const char *valid[] = {"nilakantha", "machin", "gauss", "hutton", "twinarctan", NULL};
+    int ok = 0;
+    for (int i = 0; valid[i]; i++)
+        if (strcmp(algo, valid[i]) == 0) { ok = 1; break; }
+    if (!ok) {
+        fprintf(stderr, "unknown algorithm\n");
+        return 1;
+    }
+
+    int prec = digits + GUARD;
+    BigInt pi;
+    bi_zero(&pi);
+    int iters = compute_pi(&pi, algo, prec);
+    if (iters < 0) {
+        fprintf(stderr, "unknown algorithm\n");
+        return 1;
+    }
+
+    char value[64];
+    bi_to_decimal(value, sizeof(value), &pi, prec, digits);
+
+    printf("{\"value\":\"%s\",\"iterations\":%d}\n", value, iters);
+    return 0;
+}
+```

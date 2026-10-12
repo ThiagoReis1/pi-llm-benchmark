@@ -1,0 +1,19 @@
+Você está participando de um experimento acadêmico de Cálculo Numérico.
+
+Responda exclusivamente com um único bloco de código Markdown, delimitado por exatamente uma linha inicial ` ```c ` e uma linha final ` ``` `. Não escreva introdução, explicação ou texto fora do bloco. Dentro desse bloco deve estar o arquivo C completo, compilável sem alterações manuais com GCC em Linux e com GCC/MinGW em Windows, usando C11: `gcc -std=c11 -O2 -Wall -Wextra arquivo.c -lm -o pi_benchmark`.
+
+Escolha **exatamente cinco algoritmos diferentes** de cálculo de π que considerar mais adequados para este problema e indique claramente no comentário inicial do código os cinco algoritmos escolhidos, com uma justificativa breve para cada escolha. Os cinco algoritmos devem ser **exclusivamente métodos numéricos baseados em séries convergentes para π**. Não use métodos estocásticos (como Monte Carlo) nem métodos de extração de dígitos (como BBP). Não receba uma lista fechada de algoritmos: proponha a seleção, justificativa e ordem de prioridade com base em precisão, convergência, velocidade, estabilidade numérica e reprodutibilidade. Implemente os cinco algoritmos e permita selecionar cada um pelo argumento `--algorithm`.
+
+O programa deve ser autocontido e usar apenas a biblioteca padrão de C. Não use APIs específicas de Linux/Unix ou Windows, extensões de compilador (incluindo `__int128`), bibliotecas externas, rede ou arquivos de dados. Use apenas recursos de C11 disponíveis em GCC e MinGW. Não presuma que `long double` tem mais precisão que `double`: sua precisão varia entre plataformas. Para suportar corretamente até 18 casas decimais em ambas, use representação/cálculo decimal ou aritmética inteira de precisão suficiente implementada no próprio arquivo; não dependa da precisão binária de ponto flutuante para arredondar as casas finais.
+
+Exponha esta interface de linha de comando:
+
+`./pi_benchmark --algorithm NOME --digits N`
+
+`--algorithm` seleciona um dos cinco algoritmos indicados por você e `--digits` solicita a quantidade de casas decimais de π. Os testes usarão valores de `--digits` de 1 até 18; qualquer valor fora desse intervalo (menor que 1 ou maior que 18) é inválido. Se `--digits` for omitido, use um valor padrão razoável dentro do intervalo.
+
+Imprima exclusivamente um objeto JSON em uma única linha, no formato `{"value":"<decimal>","iterations":<inteiro>}`. `<decimal>` deve representar π com exatamente N casas após o ponto e arredondamento correto na última casa. Preserve o resultado decimal como texto; não formate um `float`/`double` como se isso garantisse alta precisão. Em caso de entrada inválida ou algoritmo desconhecido, escreva uma mensagem curta em `stderr` e termine com código de saída diferente de zero.
+
+Implemente todas as fórmulas e funções auxiliares no arquivo. Não use `M_PI`, constantes decimais ou hexadecimais prontas de π, arquivos externos, internet ou funções que forneçam π pronto. Evite conversões dependentes da plataforma, comportamento indefinido e overflow; verifique limites e erros. A mesma combinação de algoritmo e parâmetros deve produzir saída determinística em Windows e Linux. Use formatos e especificadores de saída compatíveis com MinGW e GCC; não dependa de formatos estendidos de `printf` específicos de uma plataforma.
+
+Inclua comentários curtos sobre as fórmulas, a estratégia de precisão e suas limitações. O único bloco Markdown deve conter o arquivo inteiro, não vários blocos separados, e o código deve compilar sem edição manual nos dois sistemas.

@@ -1,0 +1,61 @@
+{
+  "plataforma": "grok",
+  "tentativa": 1,
+  "caso": "gauss_2",
+  "algoritmo": "gauss",
+  "digitos": 2,
+  "repeticao": 3,
+  "codigo_fonte": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+  "comando_compilacao": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+    "-lm",
+    "-o",
+    "/tmp/pi_run_492yfibj/pi_benchmark"
+  ],
+  "comando_execucao": [
+    "/tmp/pi_run_492yfibj/pi_benchmark",
+    "--algorithm",
+    "gauss",
+    "--digits",
+    "2"
+  ],
+  "tempo_execucao_segundos": 0.005622103000064271,
+  "pico_memoria_kb": null,
+  "codigo_saida": 0,
+  "resultado_runner": {
+    "ok": true,
+    "elapsed": 0.005622103000064271,
+    "peak_rss_kb": null,
+    "stdout": "{\"value\":\"3.14\",\"iterations\":9}\n",
+    "stderr": "",
+    "compile_stderr": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c: In function ‘arctan_inv’:\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c:136:18: warning: unused variable ‘x2’ [-Wunused-variable]\n  136 |     BigInt term, x2, sum, tmp;\n      |                  ^~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c: In function ‘bi_to_decimal’:\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c:282:9: warning: unused variable ‘frac_start’ [-Wunused-variable]\n  282 |     int frac_start = 0; /* digs[0] = 10^{-prec} place */\n      |         ^~~~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c: At top level:\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c:213:13: warning: ‘scale_pow10’ defined but not used [-Wunused-function]\n  213 | static void scale_pow10(BigInt *a, int p) {\n      |             ^~~~~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c:54:12: warning: ‘bi_cmp’ defined but not used [-Wunused-function]\n   54 | static int bi_cmp(const BigInt *a, const BigInt *b) {\n      |            ^~~~~~\n",
+    "compile_stdout": "",
+    "command": [
+      "/tmp/pi_run_492yfibj/pi_benchmark",
+      "--algorithm",
+      "gauss",
+      "--digits",
+      "2"
+    ],
+    "compile_command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+      "-lm",
+      "-o",
+      "/tmp/pi_run_492yfibj/pi_benchmark"
+    ],
+    "returncode": 0
+  },
+  "saida_stdout_completa": "{\"value\":\"3.14\",\"iterations\":9}\n",
+  "saida_stderr_completa": "",
+  "stderr_compilacao_completo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c: In function ‘arctan_inv’:\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c:136:18: warning: unused variable ‘x2’ [-Wunused-variable]\n  136 |     BigInt term, x2, sum, tmp;\n      |                  ^~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c: In function ‘bi_to_decimal’:\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c:282:9: warning: unused variable ‘frac_start’ [-Wunused-variable]\n  282 |     int frac_start = 0; /* digs[0] = 10^{-prec} place */\n      |         ^~~~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c: At top level:\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c:213:13: warning: ‘scale_pow10’ defined but not used [-Wunused-function]\n  213 | static void scale_pow10(BigInt *a, int p) {\n      |             ^~~~~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c:54:12: warning: ‘bi_cmp’ defined but not used [-Wunused-function]\n   54 | static int bi_cmp(const BigInt *a, const BigInt *b) {\n      |            ^~~~~~\n"
+}

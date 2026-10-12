@@ -1,0 +1,12 @@
+{
+  "llm_id": "grok",
+  "platform": "Grok",
+  "prompt_id": "benchmark_prompt_c_single_markdown_block",
+  "prompt_sha256": "24176b7827151e9ba319e3ea05a0b33403d8a3e43556896356cf3cd583b2133d",
+  "attempt": 1,
+  "extraction_mode": "removed_markdown_fence",
+  "manual_logic_changes": false,
+  "response_file": "response_original.txt",
+  "response_original_sha256": "4e3885eccda72d0dbaea01eb760364c75b935ed35f9f634098110369b95f32df",
+  "submission_sha256": "e906b48a8b265fe002e764fe02b79e9714678e16775e3a3af48f63ba9ccf924b"
+}

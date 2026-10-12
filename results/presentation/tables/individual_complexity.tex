@@ -1,0 +1,33 @@
+\begin{longtable}{p{2.0cm}p{1.8cm}p{2.2cm}p{2.6cm}p{3.0cm}p{1.5cm}}
+\caption{Complexidade temporal e espacial por método implementado. A origem identifica o arquivo C, não uma classe de desempenho da IA.}\label{tab:complexidade}\\
+\toprule
+Método & Origem do código & Núcleo atual & Com saída & Precisão arbitrária & Espaço\\
+\midrule
+\endfirsthead
+\toprule
+Método & Origem do código & Núcleo atual & Com saída & Precisão arbitrária & Espaço\\
+\midrule
+\endhead
+atan23 & ChatGPT & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+chudnovsky & Claude & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+euler & ChatGPT & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^3)$ se o número de diferenças, os termos e os limbs crescerem com d & $\Theta(1)$\\
+euler & Claude & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+euler & Gemini & $\Theta(d)$ & $\Theta(d)$ & $O(d^2)$ & $\Theta(1)$\\
+gauss & ChatGPT & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+gauss & Grok & $\Theta(d)$ & $\Theta(d)$ & $O(d^2)$ & $\Theta(1)$\\
+hutton & Grok & $\Theta(d)$ & $\Theta(d)$ & $O(d^2)$ & $\Theta(1)$\\
+machin & ChatGPT & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+machin & Claude & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+machin & Gemini & $\Theta(d)$ & $\Theta(d)$ & $O(d^2)$ & $\Theta(1)$\\
+machin & Grok & $\Theta(d)$ & $\Theta(d)$ & $O(d^2)$ & $\Theta(1)$\\
+machin7 & ChatGPT & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+newton & Gemini & $\Theta(d)$ & $\Theta(d)$ & $O(d^2)$ & $\Theta(1)$\\
+nilakantha & Gemini & $\Theta(10^(d/3))$ & $\Theta(10^(d/3))$ & $O(d \cdot  10^(d/3))$ & $\Theta(1)$\\
+nilakantha & Grok & $\Theta(10^(d/3))$ & $\Theta(10^(d/3))$ & $O(d \cdot  10^(d/3))$ & $\Theta(1)$\\
+ramanujan & Claude & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+ramanujan & Gemini & $\Theta(d)$ & $\Theta(d)$ & $O(d^2)$ & $\Theta(1)$\\
+takano & Claude & $\Theta(1)$ & $\Theta(d)$ incluindo a formatação da saída & $O(d^2)$ se o limite de termos e os limbs crescerem com d & $\Theta(1)$\\
+twinarctan & Grok & $\Theta(d)$ & $\Theta(d)$ & $O(d^2)$ & $\Theta(1)$\\
+\bottomrule
+\end{longtable}
+\noindent\footnotesize Estimativa estática; métodos de uma origem que falhou na compilação não foram executados.\normalsize

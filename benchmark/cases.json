@@ -1,0 +1,48 @@
+{
+  "decimal_digits": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "invalid": [
+    {
+      "case_id": "negative_digits",
+      "algorithm": "$first",
+      "digits": -1,
+      "expect_error": true
+    },
+    {
+      "case_id": "zero_digits",
+      "algorithm": "$first",
+      "digits": 0,
+      "expect_error": true
+    },
+    {
+      "case_id": "digits_above_18",
+      "algorithm": "$first",
+      "digits": 19,
+      "expect_error": true
+    },
+    {
+      "case_id": "unknown_algorithm",
+      "algorithm": "unknown",
+      "digits": 5,
+      "expect_error": true
+    }
+  ]
+}

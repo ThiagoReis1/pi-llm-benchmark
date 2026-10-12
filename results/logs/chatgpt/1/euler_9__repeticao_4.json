@@ -1,0 +1,62 @@
+{
+  "plataforma": "chatgpt",
+  "tentativa": 1,
+  "caso": "euler_9",
+  "algoritmo": "euler",
+  "digitos": 9,
+  "repeticao": 4,
+  "codigo_fonte": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+  "comando_compilacao": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+    "-lm",
+    "-o",
+    "/tmp/pi_run_bdge804a/pi_benchmark"
+  ],
+  "comando_execucao": [
+    "/tmp/pi_run_bdge804a/pi_benchmark",
+    "--algorithm",
+    "euler",
+    "--digits",
+    "9"
+  ],
+  "tempo_execucao_segundos": 0.004889190999961102,
+  "pico_memoria_kb": 200.0,
+  "codigo_saida": 1,
+  "resultado_runner": {
+    "ok": false,
+    "error": "processo terminou com código 1",
+    "stderr": "erro: falha numerica no algoritmo\n",
+    "stdout": "",
+    "compile_stderr": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:262:12: warning: ‘big_copy’ defined but not used [-Wunused-function]\n  262 | static int big_copy(Big *dst, const Big *src)\n      |            ^~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:82:13: warning: ‘big_from_u32’ defined but not used [-Wunused-function]\n   82 | static void big_from_u32(Big *a, uint32_t x)\n      |             ^~~~~~~~~~~~\n",
+    "compile_stdout": "",
+    "command": [
+      "/tmp/pi_run_bdge804a/pi_benchmark",
+      "--algorithm",
+      "euler",
+      "--digits",
+      "9"
+    ],
+    "compile_command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+      "-lm",
+      "-o",
+      "/tmp/pi_run_bdge804a/pi_benchmark"
+    ],
+    "returncode": 1,
+    "peak_rss_kb": 200.0,
+    "elapsed": 0.004889190999961102
+  },
+  "saida_stdout_completa": "",
+  "saida_stderr_completa": "erro: falha numerica no algoritmo\n",
+  "stderr_compilacao_completo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:262:12: warning: ‘big_copy’ defined but not used [-Wunused-function]\n  262 | static int big_copy(Big *dst, const Big *src)\n      |            ^~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:82:13: warning: ‘big_from_u32’ defined but not used [-Wunused-function]\n   82 | static void big_from_u32(Big *a, uint32_t x)\n      |             ^~~~~~~~~~~~\n"
+}

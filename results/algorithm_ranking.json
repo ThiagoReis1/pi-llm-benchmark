@@ -1,0 +1,4723 @@
+{
+  "comparison_unit": "método implementado: algoritmo declarado + arquivo C de origem",
+  "provenance_note": "llm_id identifica somente a origem do código; não representa score comparativo do modelo",
+  "method": "empírica; análise estática individual de cada submission.c; análise teórica geral e ajuste empírico mantidos separadamente",
+  "ranking": [
+    {
+      "llm_id": "claude",
+      "algorithm": "chudnovsky",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.004684282000027906,
+      "analise_assintotica": {
+        "algoritmo": "chudnovsky",
+        "familia": "série hipergeométrica",
+        "convergencia": "geométrica extremamente rápida; aproximadamente 14 casas decimais por termo",
+        "estabilidade": "boa quando a soma alternada e a divisão final usam precisão maior que a meta; sensível a cancelamento e à implementação de fatoriais",
+        "complexidade_temporal": "O(d^2) com aritmética inteira de precisão d e operações por termo lineares no número de dígitos",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "A fórmula calcula 1/pi e exige soma de termos grandes e uma divisão final."
+      },
+      "analise_codigo_por_submissao": {
+        "claude": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "chudnovsky",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 1.0,
+      "empirical_score": 100.0,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "claude",
+        "algorithm": "chudnovsky",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.004748023000047397,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004642173999968691,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.0047632559999328805,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.0045920479999495,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004603495000083058,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.0047709980000263386,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.00470201400003134,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.00462165199996889,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004682855000055497,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004830798000057257,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.004872739999996156,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.004652848999967318,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.004740561999938109,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.0046277019999934055,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.004648653000003833,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004685709000000315,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.004783626999937951,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.0045605409999325275,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.0007482968499645793,
+          "intercepto_logaritmico": -5.359670575922063,
+          "r2": 0.0010682574386214894
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.0001791464108915005,
+          "intercepto_logaritmico": -5.359481718185385,
+          "r2": 0.002714011373849523
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 242.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 202.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 200.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.010850615920568903,
+          "intercepto_logaritmico": 5.371023236326731,
+          "r2": 0.009687115677658342
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "claude",
+      "algorithm": "ramanujan",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.0047012009999889415,
+      "analise_assintotica": {
+        "algoritmo": "ramanujan",
+        "familia": "série hipergeométrica para 1/pi",
+        "convergencia": "geométrica extremamente rápida; aproximadamente 8 casas decimais por termo",
+        "estabilidade": "boa em aritmética de alta precisão; o recíproco final exige guarda de dígitos",
+        "complexidade_temporal": "O(d^2) com as operações de inteiros usadas nas submissões",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "A soma é positiva e os termos diminuem rapidamente."
+      },
+      "analise_codigo_por_submissao": {
+        "claude": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "ramanujan",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9964011323997687,
+      "empirical_score": 99.94601698599652,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "claude",
+        "algorithm": "ramanujan",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.0049573889999692256,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004891368000016882,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.00472943399995529,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.00461172699999679,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004720581000015045,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004738559000088571,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.004669284999977208,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.004705236000063451,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004402912000045944,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004697165999914432,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.004857807999997021,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.004623965000064345,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.004625207999993108,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.004551126000023942,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.004756916000019373,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004678137999917453,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.004740631999993639,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.00467791699998088,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.016956686473023,
+          "intercepto_logaritmico": -5.325825465404437,
+          "r2": 0.258858377189764
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.0016961895482451447,
+          "intercepto_logaritmico": -5.34399756210937,
+          "r2": 0.11481439924556813
+        },
+        "modelo_temporal_preferido": "potência",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 224.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 218.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 200.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.00885225082562137,
+          "intercepto_logaritmico": 5.41283657209345,
+          "r2": 0.007376219599168676
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "claude",
+      "algorithm": "takano",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.0047232160000021395,
+      "analise_assintotica": {
+        "algoritmo": "takano",
+        "familia": "identidade de arco-tangente com quatro parcelas",
+        "convergencia": "geométrica; o termo dominante usa arctan(1/49), com N(d)=Theta(d)",
+        "estabilidade": "boa em alta precisão; requer controle do cancelamento entre parcelas",
+        "complexidade_temporal": "O(d^2)",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "O denominador 110443 produz uma parcela muito rápida, mas não elimina o custo das demais."
+      },
+      "analise_codigo_por_submissao": {
+        "claude": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "takano",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9917568876853788,
+      "empirical_score": 99.87635331528068,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "claude",
+        "algorithm": "takano",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.00476600900003632,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004875885999922502,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.0046370149999575005,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.00476844299998902,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004780301999971925,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004791627999907178,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.00467649499989875,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.0047268719999919995,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004713240000000951,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004711648000011337,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.0047877770000468445,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.0047195600000122795,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.004775164000079712,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.004713521999974546,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.004713932000072418,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004669804999934968,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.004703026000015598,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.004779192000000876,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.004739009903001339,
+          "intercepto_logaritmico": -5.342325122902512,
+          "r2": 0.10311237838974152
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.0006152225104446316,
+          "intercepto_logaritmico": -5.346062641012455,
+          "r2": 0.07703132272877655
+        },
+        "modelo_temporal_preferido": "potência",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 238.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 200.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.028317407657780663,
+          "intercepto_logaritmico": 5.445954749407434,
+          "r2": 0.07131208319084847
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "claude",
+      "algorithm": "euler",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.004723876500008828,
+      "analise_assintotica": {
+        "algoritmo": "euler",
+        "familia": "série positiva de Euler",
+        "convergencia": "geométrica moderada; a razão assintótica dos termos tende a 1/2",
+        "estabilidade": "boa por não alternar sinais nessa forma, mas exige muitos termos",
+        "complexidade_temporal": "O(d^2) se o limite de termos crescer linearmente com d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "Implementações com limite fixo de termos deixam de ser assintoticamente válidas para d arbitrário."
+      },
+      "analise_codigo_por_submissao": {
+        "claude": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "euler",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9916182186429201,
+      "empirical_score": 99.8742732796438,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "claude",
+        "algorithm": "euler",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.00497713900006147,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004812961999959953,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004726430000005166,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.004758508999998412,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004717517000017324,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004684626999960528,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.004691057999934856,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.004799490999971567,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004706160999944586,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004828373999998803,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.0047213230000124895,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.0046972659999937605,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.004669203999924321,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.004594591999989461,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.004696837000096821,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004885171000069022,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.00504014399996322,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.004753861999915898,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.006687808582487527,
+          "intercepto_logaritmico": -5.33329854200587,
+          "r2": 0.053771677141312146
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -8.277320281254682e-05,
+          "intercepto_logaritmico": -5.3460347394028025,
+          "r2": 0.000365117611897503
+        },
+        "modelo_temporal_preferido": "potência",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 248.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 200.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.02322702422052822,
+          "intercepto_logaritmico": 5.439080780429498,
+          "r2": 0.046424695273400984
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "gemini",
+      "algorithm": "newton",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.004725087499991787,
+      "analise_assintotica": {
+        "algoritmo": "newton",
+        "familia": "série de Newton baseada em arco-seno",
+        "convergencia": "geométrica moderada; a razão assintótica dos termos é aproximadamente 1/4",
+        "estabilidade": "boa para a recorrência positiva; a precisão da divisão ainda limita o resultado",
+        "complexidade_temporal": "O(d^2)",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "A recorrência evita recalcular fatoriais a cada termo."
+      },
+      "analise_codigo_por_submissao": {
+        "gemini": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "newton",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9913640752760765,
+      "empirical_score": 99.87046112914115,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "gemini",
+        "algorithm": "newton",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.004734319999897707,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.0044909140000299885,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004715855000085867,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.004646930000035354,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004563954999980524,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.005087294999952974,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.005241969000053359,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.005030157999954099,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004589553000073465,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004949646999989454,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.005482783000047675,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.003828770999916742,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.00501726899994992,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.004475685999977941,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.005046442999969258,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.005488405000050989,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.003847752000069704,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.0040753050000148505,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.009419349075719355,
+          "intercepto_logaritmico": -5.337950047892887,
+          "r2": 0.0050806657380316755
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.003608647666848439,
+          "intercepto_logaritmico": -5.322713528567864,
+          "r2": 0.033054846947685235
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 252.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 228.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 222.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 454.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 224.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 218.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 254.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 234.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 204.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.04669196297059639,
+          "intercepto_logaritmico": 5.56196576021035,
+          "r2": 0.04237239889061484
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 17,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "claude",
+      "algorithm": "machin",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.004807152500063694,
+      "analise_assintotica": {
+        "algoritmo": "machin",
+        "familia": "identidade de Machin e séries de arco-tangente",
+        "convergencia": "geométrica; dominada pelo termo arctan(1/5), com N(d)=Theta(d)",
+        "estabilidade": "boa, mas a subtração entre parcelas exige guarda de dígitos",
+        "complexidade_temporal": "O(d^2) com divisão por constantes e inteiros de precisão d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "O identificador pode representar a mesma identidade em escala para pi ou pi/4."
+      },
+      "analise_codigo_por_submissao": {
+        "claude": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "machin",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9744400661235192,
+      "empirical_score": 99.61660099185279,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "claude",
+        "algorithm": "machin",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.004790658000047188,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004746801000010237,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004729314999963208,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.004835246000084226,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004998131999968791,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.005196421000050577,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.004659489000005124,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.0047562759999664195,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004630975999930342,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.005388080999978229,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.004825320000009015,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.004700262000028488,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.0048236470000802,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.004880723999917791,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.00483168999994632,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004750166999997418,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.00486719399998492,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.004778189000035127,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.002739780620268788,
+          "intercepto_logaritmico": -5.336267942619938,
+          "r2": 0.0034462810896491725
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.00012002069718932983,
+          "intercepto_logaritmico": -5.32958799402736,
+          "r2": 0.00029315597955048567
+        },
+        "modelo_temporal_preferido": "potência",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 220.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 232.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.023588314304334352,
+          "intercepto_logaritmico": 5.4394077551190145,
+          "r2": 0.05795948318073618
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "gemini",
+      "algorithm": "ramanujan",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.004899927500048307,
+      "analise_assintotica": {
+        "algoritmo": "ramanujan",
+        "familia": "série hipergeométrica para 1/pi",
+        "convergencia": "geométrica extremamente rápida; aproximadamente 8 casas decimais por termo",
+        "estabilidade": "boa em aritmética de alta precisão; o recíproco final exige guarda de dígitos",
+        "complexidade_temporal": "O(d^2) com as operações de inteiros usadas nas submissões",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "A soma é positiva e os termos diminuem rapidamente."
+      },
+      "analise_codigo_por_submissao": {
+        "gemini": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "ramanujan",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9559900631145513,
+      "empirical_score": 99.33985094671827,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "gemini",
+        "algorithm": "ramanujan",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.004734764000090763,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004860513000039646,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004893491000075301,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.004921465000052194,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004901514000039242,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004697548000081042,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.004826721000085854,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.005004539999958979,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004606148999982906,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004915181000001212,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.00489924200007863,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.004900613000017984,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.004915240000059384,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.00538674299991726,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.0047461379999731435,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.005097902999978032,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.005267547000016748,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.004745389000049727,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.01640685429098982,
+          "intercepto_logaritmico": -5.351039016138858,
+          "r2": 0.115988641703068
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": 0.0027050286010713714,
+          "intercepto_logaritmico": -5.343562634161041,
+          "r2": 0.1397577471766437
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 202.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 218.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 222.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 516.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 246.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 236.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.06937988890072015,
+          "intercepto_logaritmico": 5.324790092219458,
+          "r2": 0.07031887379859891
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "gemini",
+      "algorithm": "machin",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.004907236000008197,
+      "analise_assintotica": {
+        "algoritmo": "machin",
+        "familia": "identidade de Machin e séries de arco-tangente",
+        "convergencia": "geométrica; dominada pelo termo arctan(1/5), com N(d)=Theta(d)",
+        "estabilidade": "boa, mas a subtração entre parcelas exige guarda de dígitos",
+        "complexidade_temporal": "O(d^2) com divisão por constantes e inteiros de precisão d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "O identificador pode representar a mesma identidade em escala para pi ou pi/4."
+      },
+      "analise_codigo_por_submissao": {
+        "gemini": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "machin",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9545662772322508,
+      "empirical_score": 99.31849415848376,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "gemini",
+        "algorithm": "machin",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.004832145000023047,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004917043999967063,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004897428000049331,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.005276451999975507,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004864419000000453,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004794403000005332,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.00499030900004982,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.0046180570000160515,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.0046126980000735784,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004822204999982205,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.005365159000007225,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.005437193000034313,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.005367107999973086,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.005411726000033923,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.004876036999917233,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004756676000056359,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.006848515999990923,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.005615393999960361,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.04779883464518992,
+          "intercepto_logaritmico": -5.374161573825804,
+          "r2": 0.16378772175545409
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": 0.009235262858214013,
+          "intercepto_logaritmico": -5.365248800571234,
+          "r2": 0.27102702345705987
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 252.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 202.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 224.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 220.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 242.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 220.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 224.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 242.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 276.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 324.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 200.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.01162459033225779,
+          "intercepto_logaritmico": 5.411867914514037,
+          "r2": 0.005359270104716929
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "gemini",
+      "algorithm": "euler",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.004945916499991654,
+      "analise_assintotica": {
+        "algoritmo": "euler",
+        "familia": "série positiva de Euler",
+        "convergencia": "geométrica moderada; a razão assintótica dos termos tende a 1/2",
+        "estabilidade": "boa por não alternar sinais nessa forma, mas exige muitos termos",
+        "complexidade_temporal": "O(d^2) se o limite de termos crescer linearmente com d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "Implementações com limite fixo de termos deixam de ser assintoticamente válidas para d arbitrário."
+      },
+      "analise_codigo_por_submissao": {
+        "gemini": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "euler",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9471009063812159,
+      "empirical_score": 99.20651359571823,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "gemini",
+        "algorithm": "euler",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.004847382999969341,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.00523412699999426,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004748081999991882,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.00613436499997988,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004877658999930645,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.0057992790000298555,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.006461708999950133,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.005595812000024125,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.0050220969999372755,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004925480999986576,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.005294635000041126,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.004837995000002593,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.005004188000043541,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.004784956999969836,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.004532427000071948,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004595651999920847,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.004787122000038835,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.004966351999996732,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.02863470279728563,
+          "intercepto_logaritmico": -5.218312518427951,
+          "r2": 0.05430995567290098
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.007757965845815481,
+          "intercepto_logaritmico": -5.202510329376422,
+          "r2": 0.17670838734531857
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 256.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 316.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 444.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 380.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 224.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 222.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 220.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.043626918862853664,
+          "intercepto_logaritmico": 5.631845430039048,
+          "r2": 0.030607485582910265
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 16,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "grok",
+      "algorithm": "machin",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.005129055999987031,
+      "analise_assintotica": {
+        "algoritmo": "machin",
+        "familia": "identidade de Machin e séries de arco-tangente",
+        "convergencia": "geométrica; dominada pelo termo arctan(1/5), com N(d)=Theta(d)",
+        "estabilidade": "boa, mas a subtração entre parcelas exige guarda de dígitos",
+        "complexidade_temporal": "O(d^2) com divisão por constantes e inteiros de precisão d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "O identificador pode representar a mesma identidade em escala para pi ou pi/4."
+      },
+      "analise_codigo_por_submissao": {
+        "grok": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "machin",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9132834580163972,
+      "empirical_score": 98.69925187024594,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "grok",
+        "algorithm": "machin",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.005233753000084107,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.005085119999989729,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004621139000050789,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.005082797000000028,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.005054295000036291,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004857023999988996,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.004951118000008137,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.00551978600003622,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.005172991999984333,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.00537027500001841,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.004705788000023858,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.0038862400000425623,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.006251540999983263,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.005227500000046348,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.006617745000085051,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.00617182700000285,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.005354698000019198,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.004904522999936489,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.034829011030972995,
+          "intercepto_logaritmico": -5.331413159091101,
+          "r2": 0.05348251801135562
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": 0.006968786623477992,
+          "intercepto_logaritmico": -5.327193445201488,
+          "r2": 0.09490984036729422
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 218.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 220.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 202.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 612.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 1472.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 516.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.36165190686738036,
+          "intercepto_logaritmico": 4.9940341992287784,
+          "r2": 0.25170576944333134
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 14,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "grok",
+      "algorithm": "twinarctan",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.005265726000061477,
+      "analise_assintotica": {
+        "algoritmo": "twinarctan",
+        "familia": "soma de duas séries de arco-tangente",
+        "convergencia": "geométrica; dominada por arctan(1/2), com N(d)=Theta(d)",
+        "estabilidade": "boa, sem subtração entre parcelas, mas com maior número de termos",
+        "complexidade_temporal": "O(d^2)",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "É uma descrição de implementação, não o nome de uma família única."
+      },
+      "analise_codigo_por_submissao": {
+        "grok": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "twinarctan",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.8895795185646229,
+      "empirical_score": 98.34369277846933,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "grok",
+        "algorithm": "twinarctan",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.005247278000069855,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.006547731999944517,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004187522999927751,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.006637006000005385,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.005401639000069736,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.005284174000053099,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.00545513800000208,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.005504154000050221,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.005175235000024259,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.0050833220000185975,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.005853786999978183,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.006648396999935358,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.004990902000031383,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.004837239999915255,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.0046868009999343485,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.005339905000028011,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.004820985000037581,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.004950584000084746,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.03391941128263192,
+          "intercepto_logaritmico": -5.165682636348167,
+          "r2": 0.04888270940131456
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.006692781308706477,
+          "intercepto_logaritmico": -5.170685218072443,
+          "r2": 0.08436052516137593
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 452.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 632.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 202.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 248.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 1868.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 378.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 250.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 772.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 1020.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.030000693418760237,
+          "intercepto_logaritmico": 5.874308537813658,
+          "r2": 0.0012268044618560792
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 14,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "grok",
+      "algorithm": "hutton",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.005330017000062526,
+      "analise_assintotica": {
+        "algoritmo": "hutton",
+        "familia": "identidade curta de arco-tangente",
+        "convergencia": "geométrica; dominada por arctan(1/3), com N(d)=Theta(d)",
+        "estabilidade": "boa para precisão fixa, desde que as duas parcelas sejam acumuladas com guarda",
+        "complexidade_temporal": "O(d^2)",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "A fórmula é simples, mas converge mais lentamente que as que usam denominadores maiores."
+      },
+      "analise_codigo_por_submissao": {
+        "grok": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "hutton",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.8788493545091799,
+      "empirical_score": 98.1827403176377,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "grok",
+        "algorithm": "hutton",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.0049673009999651185,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004954693999934534,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004979430999924261,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.005181776999961585,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.0050707689999853756,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.005097142999943571,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.005635320999999749,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.005722985000033987,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.0056587970000236965,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004318633000025329,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.006433463000007578,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.0056033279998928265,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.007887433999940185,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.005233094999994137,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.005421559000069465,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.005315480000035677,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.005344554000089374,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.00687702300001547,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.07602255496776401,
+          "intercepto_logaritmico": -5.358917133107349,
+          "r2": 0.19867106336701612
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": 0.011769909454491077,
+          "intercepto_logaritmico": -5.3170160099303505,
+          "r2": 0.2110878739402393
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 222.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 264.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 320.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 308.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 248.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 1340.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.34999048214196715,
+          "intercepto_logaritmico": 5.080874851526659,
+          "r2": 0.2828846642663353
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 11,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "grok",
+      "algorithm": "gauss",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.005522441500033892,
+      "analise_assintotica": {
+        "algoritmo": "gauss",
+        "familia": "identidade de Gauss baseada em arco-tangente",
+        "convergencia": "geométrica; o termo mais lento usa arctan(1/18), com N(d)=Theta(d)",
+        "estabilidade": "boa, com possível perda por cancelamento na parcela subtraída",
+        "complexidade_temporal": "O(d^2)",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "Várias séries são somadas, mas todas têm argumentos pequenos."
+      },
+      "analise_codigo_por_submissao": {
+        "grok": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "gauss",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.8482266403363726,
+      "empirical_score": 97.72339960504559,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "grok",
+        "algorithm": "gauss",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.006080273000065972,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.005133003000082681,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004780763999974624,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.003876605000073141,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.006182678999948621,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.005921073999957116,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.00476511700003357,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.00587802199993348,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.006557146000091052,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004917943000009473,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.006221592999963832,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.006029872999988584,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.004830416000004334,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.006843125000045802,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.005361336999953892,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.005459467000036966,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.005585416000030818,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.005065130000048157,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.023859395784074765,
+          "intercepto_logaritmico": -5.255520985187581,
+          "r2": 0.01829984488330272
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": 0.004130334583050289,
+          "intercepto_logaritmico": -5.2465162008401105,
+          "r2": 0.02430895789358234
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 248.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 550.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 248.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 236.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.003593083352643718,
+          "intercepto_logaritmico": 5.566031750539371,
+          "r2": 0.00012592510113074162
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 8,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "gemini",
+      "algorithm": "nilakantha",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 18,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 1.0,
+      "precision_score": 1.0,
+      "median_time_seconds": 0.005553720499960946,
+      "analise_assintotica": {
+        "algoritmo": "nilakantha",
+        "familia": "série alternada racional de Nilakantha",
+        "convergencia": "algébrica, com termo de ordem Theta(k^-3); para d casas, N(d)=Theta(10^(d/3))",
+        "estabilidade": "moderada: a alternância e a acumulação de muitos termos podem amplificar arredondamentos",
+        "complexidade_temporal": "O(10^(d/3) d) com operações de precisão d; exponencial em d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(10^(d/3))",
+        "observacao": "É excelente como linha de base simples, mas inadequada para alta precisão sem aceleração."
+      },
+      "analise_codigo_por_submissao": {
+        "gemini": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "nilakantha",
+          "complexidade_temporal_codigo_atual": "Theta(10^(d/3))",
+          "complexidade_temporal_programa_com_saida": "Theta(10^(d/3))",
+          "complexidade_temporal_precisao_arbitraria": "O(d * 10^(d/3))",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(10^(d/3))",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "termo racional de ordem k^-3; o laço continua até o termo atingir o limiar",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.8434493597689776,
+      "empirical_score": 97.65174039653466,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "gemini",
+        "algorithm": "nilakantha",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.00471746699997766,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004776164999952925,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004931916999908026,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.005785080000009657,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004943898999954399,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004864805000011074,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.0046097040000177,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.0049383109999325825,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.0049793729999692005,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.005399927999974352,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.005707512999947539,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.008681151000018872,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.012345514000003277,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.02079557299998669,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.03941928300002928,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.07754562100001294,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.16269855799998822,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.3408549639999592,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 1.0774900341873554,
+          "intercepto_logaritmico": -6.616272165457416,
+          "r2": 0.40146803869586745
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": 0.21232303267968305,
+          "intercepto_logaritmico": -6.454689336943986,
+          "r2": 0.6910126822305276
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 224.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 248.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 248.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 248.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 320.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 1352.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 1348.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 1348.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 1352.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 1352.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 1348.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 1348.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 1348.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.8351149957223647,
+          "intercepto_logaritmico": 4.56717121564341,
+          "r2": 0.5792294689212927
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "grok",
+      "algorithm": "nilakantha",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 8,
+      "incorrect_configurations": 10,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 0.4444444444444444,
+      "precision_score": 0.8268970726078569,
+      "median_time_seconds": 0.0048367920000487175,
+      "analise_assintotica": {
+        "algoritmo": "nilakantha",
+        "familia": "série alternada racional de Nilakantha",
+        "convergencia": "algébrica, com termo de ordem Theta(k^-3); para d casas, N(d)=Theta(10^(d/3))",
+        "estabilidade": "moderada: a alternância e a acumulação de muitos termos podem amplificar arredondamentos",
+        "complexidade_temporal": "O(10^(d/3) d) com operações de precisão d; exponencial em d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(10^(d/3))",
+        "observacao": "É excelente como linha de base simples, mas inadequada para alta precisão sem aceleração."
+      },
+      "analise_codigo_por_submissao": {
+        "grok": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "nilakantha",
+          "complexidade_temporal_codigo_atual": "Theta(10^(d/3))",
+          "complexidade_temporal_programa_com_saida": "Theta(10^(d/3))",
+          "complexidade_temporal_precisao_arbitraria": "O(d * 10^(d/3))",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(10^(d/3))",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "termo racional de ordem k^-3; o laço continua até o termo atingir o limiar",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9684687702056911,
+      "empirical_score": 65.69065131658259,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "grok",
+        "algorithm": "nilakantha",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.005006042999980309,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004835114999991674,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.005080195000005006,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.005191492999983893,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004676654000036251,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004823285000043143,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.004623925000032614,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.004627520999974877,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004838469000105761,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004896797000014885,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.005064711000045463,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.00467809600002056,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.00470616899997367,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.004992321000031552,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.0047375149999879795,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004736629000035464,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.004980482000064512,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.00484962399991673,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.012609574218313664,
+          "intercepto_logaritmico": -5.30333497717873,
+          "r2": 0.08491945696889314
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.0012955581830192252,
+          "intercepto_logaritmico": -5.316523344860006,
+          "r2": 0.039736311890821496
+        },
+        "modelo_temporal_preferido": "potência",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 232.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 234.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 222.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 276.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 220.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.013142795052216188,
+          "intercepto_logaritmico": 5.46342432018499,
+          "r2": 0.016553089540926713
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "chatgpt",
+      "algorithm": "gauss",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 5,
+      "incorrect_configurations": 13,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 0.2777777777777778,
+      "precision_score": 0.5470610544139956,
+      "median_time_seconds": 0.005748647000018536,
+      "analise_assintotica": {
+        "algoritmo": "gauss",
+        "familia": "identidade de Gauss baseada em arco-tangente",
+        "convergencia": "geométrica; o termo mais lento usa arctan(1/18), com N(d)=Theta(d)",
+        "estabilidade": "boa, com possível perda por cancelamento na parcela subtraída",
+        "complexidade_temporal": "O(d^2)",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "Várias séries são somadas, mas todas têm argumentos pequenos."
+      },
+      "analise_codigo_por_submissao": {
+        "chatgpt": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "gauss",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.814849476757366,
+      "empirical_score": 45.25876794473922,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "chatgpt",
+        "algorithm": "gauss",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.0045161619999589675,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004790852000041923,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.005355279000013979,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.007469229999969684,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.00624717799996688,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.005815350000034414,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.0063933440000027986,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.005082539999989422,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.006068974000072558,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.005598077999934503,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.0064303290000680136,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.005424521000009008,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.006564992999983588,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.005681944000002659,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.00445524999997815,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.006205926000006912,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.007703859999992346,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.005014189999997143,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.06043529816044309,
+          "intercepto_logaritmico": -5.279556968203737,
+          "r2": 0.09712030082993917
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": 0.005092579415491044,
+          "intercepto_logaritmico": -5.205738162493705,
+          "r2": 0.030568325535602292
+        },
+        "modelo_temporal_preferido": "potência",
+        "pontos_memoria": [
+          {
+            "digitos": 5,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 772.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 320.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 584.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.41904337231422856,
+          "intercepto_logaritmico": 4.951593504904832,
+          "r2": 0.1343165353614284
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 5,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "chatgpt",
+      "algorithm": "machin7",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 2,
+      "incorrect_configurations": 16,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 0.1111111111111111,
+      "precision_score": 0.4251106056253115,
+      "median_time_seconds": 0.005204027499985386,
+      "analise_assintotica": {
+        "algoritmo": "machin7",
+        "familia": "identidade alternativa do tipo Machin",
+        "convergencia": "geométrica; dominada por arctan(1/7), com N(d)=Theta(d)",
+        "estabilidade": "boa em precisão suficiente; a soma de parcelas deve preservar dígitos de guarda",
+        "complexidade_temporal": "O(d^2) no código de precisão inteira observado",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "O sufixo 7 é um rótulo local, não uma denominação universal."
+      },
+      "analise_codigo_por_submissao": {
+        "chatgpt": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "machin7",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9001262964196597,
+      "empirical_score": 33.93632119873635,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "chatgpt",
+        "algorithm": "machin7",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.004729375000010805,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.005364244000020335,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.006050881999954072,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.0046099009999807095,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.003596684999934041,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.006374435999987327,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.00528939100001935,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.006625630000030469,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004789074999962395,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.004681423000079121,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.003895691000025181,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.00499213199998394,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.006542785000078766,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.007435698999984197,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.004450934000033158,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.005665780000072118,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.006386626999983491,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.005118663999951423,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.04480755656027922,
+          "intercepto_logaritmico": -5.335693496618944,
+          "r2": 0.03440318127315234
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": 0.007775451024767293,
+          "intercepto_logaritmico": -5.318960783037817,
+          "r2": 0.04592134600413522
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 608.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 260.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 516.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 512.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 1544.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.3667608148417961,
+          "intercepto_logaritmico": 5.252305286524435,
+          "r2": 0.27692378942455576
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 8,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "chatgpt",
+      "algorithm": "atan23",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 1,
+      "incorrect_configurations": 17,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 0.05555555555555555,
+      "precision_score": 0.1941726710109063,
+      "median_time_seconds": 0.00486429049999515,
+      "analise_assintotica": {
+        "algoritmo": "atan23",
+        "familia": "soma de duas séries de arco-tangente",
+        "convergencia": "geométrica; dominada por arctan(1/2), com N(d)=Theta(d)",
+        "estabilidade": "boa em precisão suficiente; a soma não tem cancelamento de sinais",
+        "complexidade_temporal": "O(d^2)",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "É matematicamente a mesma identidade registrada como twinarctan."
+      },
+      "analise_codigo_por_submissao": {
+        "chatgpt": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "atan23",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.9629938836984709,
+      "empirical_score": 24.01872951863656,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "chatgpt",
+        "algorithm": "atan23",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.005410335000078703,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.004990339999949356,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.004759771999943041,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.0061475179999206375,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.004874564000033388,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.004854016999956912,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.004806162000022596,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.004679812999938804,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.004629584999975123,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.005351897999958055,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.004811170000039056,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.004947345000005043,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.004838370000015857,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.0050606260000449765,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.0049015759999520014,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.004878981000047133,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.00471899100000428,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.0047846889999618725,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.03363520947221226,
+          "intercepto_logaritmico": -5.238726774042531,
+          "r2": 0.16022529022636645
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.004551363274117614,
+          "intercepto_logaritmico": -5.263498179794337,
+          "r2": 0.1300448456040333
+        },
+        "modelo_temporal_preferido": "potência",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 2,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 3,
+            "mediana_kb": 380.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 236.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 200.0
+          },
+          {
+            "digitos": 9,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 224.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 12,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 282.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 15,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 240.0
+          },
+          {
+            "digitos": 17,
+            "mediana_kb": 244.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 320.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": 0.025791841096231623,
+          "intercepto_logaritmico": 5.451152632531915,
+          "r2": 0.017409434519560896
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 18,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "chatgpt",
+      "algorithm": "machin",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 90,
+      "correct_cases": 0,
+      "incorrect_configurations": 18,
+      "execution_failure_configurations": 0,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 18,
+      "implementations": 1,
+      "functional_accuracy": 0.0,
+      "precision_score": 0.0,
+      "median_time_seconds": 0.005470192500013127,
+      "analise_assintotica": {
+        "algoritmo": "machin",
+        "familia": "identidade de Machin e séries de arco-tangente",
+        "convergencia": "geométrica; dominada pelo termo arctan(1/5), com N(d)=Theta(d)",
+        "estabilidade": "boa, mas a subtração entre parcelas exige guarda de dígitos",
+        "complexidade_temporal": "O(d^2) com divisão por constantes e inteiros de precisão d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "O identificador pode representar a mesma identidade em escala para pi ou pi/4."
+      },
+      "analise_codigo_por_submissao": {
+        "chatgpt": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "machin",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.8563285478557958,
+      "empirical_score": 12.844928217836937,
+      "score_status": "provisional_single_implementation",
+      "analise_custo_empirica": {
+        "llm_id": "chatgpt",
+        "algorithm": "machin",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [
+          {
+            "digitos": 1,
+            "mediana_segundos": 0.005830739999964862,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 2,
+            "mediana_segundos": 0.005027626000014607,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 3,
+            "mediana_segundos": 0.005620507000003272,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 4,
+            "mediana_segundos": 0.005518042999938189,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 5,
+            "mediana_segundos": 0.0059326130000272315,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 6,
+            "mediana_segundos": 0.006433399000002282,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 7,
+            "mediana_segundos": 0.00483315099995707,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 8,
+            "mediana_segundos": 0.0056778079999730835,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 9,
+            "mediana_segundos": 0.005583850999983042,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 10,
+            "mediana_segundos": 0.005261603999997533,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 11,
+            "mediana_segundos": 0.005088912000019263,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 12,
+            "mediana_segundos": 0.0047837820000040665,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 13,
+            "mediana_segundos": 0.005211608999957207,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 14,
+            "mediana_segundos": 0.005422342000088065,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 15,
+            "mediana_segundos": 0.0037865210000518346,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 16,
+            "mediana_segundos": 0.006226481999988209,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 17,
+            "mediana_segundos": 0.0061705140000185565,
+            "medicoes_tempo": 5
+          },
+          {
+            "digitos": 18,
+            "mediana_segundos": 0.005069450999940273,
+            "medicoes_tempo": 5
+          }
+        ],
+        "ajuste_potencia": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.032804169145009505,
+          "intercepto_logaritmico": -5.158989093471089,
+          "r2": 0.04586766783691365
+        },
+        "ajuste_exponencial": {
+          "modelo": "t(d)=C*exp(beta*d)",
+          "taxa_beta": -0.004995110649201207,
+          "intercepto_logaritmico": -5.177864561232135,
+          "r2": 0.047141798576944116
+        },
+        "modelo_temporal_preferido": "exponencial",
+        "pontos_memoria": [
+          {
+            "digitos": 1,
+            "mediana_kb": 488.0
+          },
+          {
+            "digitos": 4,
+            "mediana_kb": 772.0
+          },
+          {
+            "digitos": 5,
+            "mediana_kb": 1744.0
+          },
+          {
+            "digitos": 6,
+            "mediana_kb": 1812.0
+          },
+          {
+            "digitos": 7,
+            "mediana_kb": 1608.0
+          },
+          {
+            "digitos": 8,
+            "mediana_kb": 440.0
+          },
+          {
+            "digitos": 10,
+            "mediana_kb": 322.0
+          },
+          {
+            "digitos": 11,
+            "mediana_kb": 204.0
+          },
+          {
+            "digitos": 13,
+            "mediana_kb": 252.0
+          },
+          {
+            "digitos": 14,
+            "mediana_kb": 284.0
+          },
+          {
+            "digitos": 16,
+            "mediana_kb": 768.0
+          },
+          {
+            "digitos": 18,
+            "mediana_kb": 640.0
+          }
+        ],
+        "ajuste_memoria": {
+          "modelo": "t(d)=C*d^alpha",
+          "expoente_alpha": -0.2595193298902455,
+          "intercepto_logaritmico": 6.9148694810270595,
+          "r2": 0.07230366919887032
+        },
+        "quantidade_de_niveis_temporais": 18,
+        "quantidade_de_niveis_memoria": 12,
+        "quantidade_total_medicoes_temporais": 90
+      }
+    },
+    {
+      "llm_id": "chatgpt",
+      "algorithm": "euler",
+      "cases": 18,
+      "unique_configurations": 18,
+      "timing_measurements": 0,
+      "correct_cases": 0,
+      "incorrect_configurations": 0,
+      "execution_failure_configurations": 18,
+      "inconsistent_configurations": 0,
+      "evaluated_cases": 0,
+      "implementations": 1,
+      "functional_accuracy": 0.0,
+      "precision_score": 0.0,
+      "median_time_seconds": null,
+      "analise_assintotica": {
+        "algoritmo": "euler",
+        "familia": "série positiva de Euler",
+        "convergencia": "geométrica moderada; a razão assintótica dos termos tende a 1/2",
+        "estabilidade": "boa por não alternar sinais nessa forma, mas exige muitos termos",
+        "complexidade_temporal": "O(d^2) se o limite de termos crescer linearmente com d",
+        "complexidade_espacial": "O(d)",
+        "termos_necessarios": "N(d)=Theta(d)",
+        "observacao": "Implementações com limite fixo de termos deixam de ser assintoticamente válidas para d arbitrário."
+      },
+      "analise_codigo_por_submissao": {
+        "chatgpt": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "euler",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^3) se o número de diferenças, os termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "transformação de Euler com atualização em laços aninhados; o núcleo generalizado tem O(d^3)",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      },
+      "performance_score": 0.0,
+      "empirical_score": null,
+      "score_status": "not_evaluable_no_valid_execution",
+      "analise_custo_empirica": {
+        "llm_id": "chatgpt",
+        "algorithm": "euler",
+        "observacao": "estimativa da implementação identificada; um ponto por precisão, calculado pela mediana das medições temporais repetidas; não é prova assintótica",
+        "pontos_temporais": [],
+        "ajuste_potencia": {
+          "modelo": "não estimável",
+          "r2": null
+        },
+        "ajuste_exponencial": {
+          "modelo": "não estimável",
+          "r2": null
+        },
+        "modelo_temporal_preferido": "não estimável",
+        "pontos_memoria": [],
+        "ajuste_memoria": {
+          "modelo": "não estimável",
+          "r2": null
+        },
+        "quantidade_de_niveis_temporais": 0,
+        "quantidade_de_niveis_memoria": 0,
+        "quantidade_total_medicoes_temporais": 0
+      }
+    }
+  ],
+  "analise_codigo_por_submissao": {
+    "chatgpt/attempt_01": {
+      "llm_id": "chatgpt",
+      "arquivo_codigo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+      "sha256_codigo": "e0111ca6f0c64a72a98474322f6315cc129c5e1bff50a46d5e18a8df77419e98",
+      "compila": true,
+      "algoritmos": {
+        "machin7": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "machin7",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "gauss": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "gauss",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "machin": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "machin",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "atan23": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "atan23",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "euler": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+          "algoritmo": "euler",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^3) se o número de diferenças, os termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 16,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "transformação de Euler com atualização em laços aninhados; o núcleo generalizado tem O(d^3)",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      }
+    },
+    "claude/attempt_01": {
+      "llm_id": "claude",
+      "arquivo_codigo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+      "sha256_codigo": "db81ea313c1ee53abc0d6efa4eac842948a2874e42d87d9629e28f9ea5bd8b3e",
+      "compila": true,
+      "algoritmos": {
+        "chudnovsky": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "chudnovsky",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "ramanujan": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "ramanujan",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "takano": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "takano",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "machin": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "machin",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "euler": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+          "algoritmo": "euler",
+          "complexidade_temporal_codigo_atual": "Theta(1)",
+          "complexidade_temporal_programa_com_saida": "Theta(d) incluindo a formatação da saída",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2) se o limite de termos e os limbs crescerem com d",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "O(1) no limite fixo do código",
+          "limbs_fixos_detectados": 12,
+          "controlador_depende_de_digits_ou_prec": false,
+          "limite_de_laco_constante_detectado": true,
+          "evidencia": "laço com limite constante e/ou quantidade de termos fixa",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      }
+    },
+    "gemini/attempt_01": {
+      "llm_id": "gemini",
+      "arquivo_codigo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+      "sha256_codigo": "3fe00889d8fbeaec114130dcfcfdb0b3109b0c2e3caaf5037619b9b98d56dbf2",
+      "compila": true,
+      "algoritmos": {
+        "machin": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "machin",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "euler": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "euler",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "newton": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "newton",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "nilakantha": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "nilakantha",
+          "complexidade_temporal_codigo_atual": "Theta(10^(d/3))",
+          "complexidade_temporal_programa_com_saida": "Theta(10^(d/3))",
+          "complexidade_temporal_precisao_arbitraria": "O(d * 10^(d/3))",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(10^(d/3))",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "termo racional de ordem k^-3; o laço continua até o termo atingir o limiar",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "ramanujan": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+          "algoritmo": "ramanujan",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 6,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      }
+    },
+    "grok/attempt_01": {
+      "llm_id": "grok",
+      "arquivo_codigo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+      "sha256_codigo": "e906b48a8b265fe002e764fe02b79e9714678e16775e3a3af48f63ba9ccf924b",
+      "compila": true,
+      "algoritmos": {
+        "nilakantha": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "nilakantha",
+          "complexidade_temporal_codigo_atual": "Theta(10^(d/3))",
+          "complexidade_temporal_programa_com_saida": "Theta(10^(d/3))",
+          "complexidade_temporal_precisao_arbitraria": "O(d * 10^(d/3))",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(10^(d/3))",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "termo racional de ordem k^-3; o laço continua até o termo atingir o limiar",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "machin": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "machin",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "gauss": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "gauss",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "hutton": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "hutton",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        },
+        "twinarctan": {
+          "metodo": "análise estática do código C por regras de evidência",
+          "arquivo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/grok/attempt_01/submission.c",
+          "algoritmo": "twinarctan",
+          "complexidade_temporal_codigo_atual": "Theta(d)",
+          "complexidade_temporal_programa_com_saida": "Theta(d)",
+          "complexidade_temporal_precisao_arbitraria": "O(d^2)",
+          "complexidade_espacial_codigo_atual": "Theta(1)",
+          "termos_necessarios_inferidos": "Theta(d)",
+          "limbs_fixos_detectados": 8,
+          "controlador_depende_de_digits_ou_prec": true,
+          "limite_de_laco_constante_detectado": false,
+          "evidencia": "o limiar, a precisão ou o número de termos depende de digits/prec",
+          "status": "analisado_automaticamente_com_heuristicas_reprodutiveis"
+        }
+      }
+    }
+  }
+}

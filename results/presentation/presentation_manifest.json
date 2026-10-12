@@ -1,0 +1,33 @@
+{
+  "generated_at_utc": "2026-10-12T13:49:22Z",
+  "source_files": [
+    "results.json",
+    "algorithm_ranking.json",
+    "individual_code_analysis.json",
+    "run_metadata.json",
+    "presentation/recommendation_claims.json",
+    "presentation/algorithm_taxonomy.json"
+  ],
+  "unique_decimal_configurations": 360,
+  "compile_gate_failures": 0,
+  "tables_directory": "results/presentation/tables",
+  "figures_directory": "results/presentation/figures",
+  "generated_catalogs": [
+    "results/presentation/formula_catalog.json"
+  ],
+  "formula_tables": [
+    "formula_catalog_chatgpt.tex",
+    "formula_catalog_claude.tex",
+    "formula_catalog_gemini.tex",
+    "formula_catalog_grok.tex"
+  ],
+  "recommendation_tables": [
+    "recommendation_order_by_source.tex"
+  ],
+  "interpretation": "A ordem e as justificativas são transcritas descritivamente das respostas; a evidência empírica permanece por implementação concreta, sem score de IA. Repetições são usadas somente para resumir os tempos.",
+  "figures": [
+    "validated_precision_by_implementation.pdf",
+    "nilakantha_accuracy_runtime_case_study.pdf"
+  ],
+  "supplementary_diagrams": []
+}

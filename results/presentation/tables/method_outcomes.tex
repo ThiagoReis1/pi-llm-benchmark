@@ -1,0 +1,28 @@
+\scriptsize
+\begin{tabular}{p{2.0cm}p{1.45cm}rrrrrr}
+\toprule
+Método & Origem do código & Config. avaliadas & Corretas & Incorretas & Sem JSON & Diverg. & $A_f$\\
+\midrule
+atan23 & ChatGPT & 18 & 1 & 17 & 0 & 0 & 5.6\%\\
+chudnovsky & Claude & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+euler & ChatGPT & 18 & 0 & 0 & 18 & 0 & 0.0\%\\
+euler & Claude & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+euler & Gemini & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+gauss & ChatGPT & 18 & 5 & 13 & 0 & 0 & 27.8\%\\
+gauss & Grok & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+hutton & Grok & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+machin & ChatGPT & 18 & 0 & 18 & 0 & 0 & 0.0\%\\
+machin & Claude & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+machin & Gemini & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+machin & Grok & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+machin7 & ChatGPT & 18 & 2 & 16 & 0 & 0 & 11.1\%\\
+newton & Gemini & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+nilakantha & Gemini & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+nilakantha & Grok & 18 & 8 & 10 & 0 & 0 & 44.4\%\\
+ramanujan & Claude & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+ramanujan & Gemini & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+takano & Claude & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+twinarctan & Grok & 18 & 18 & 0 & 0 & 0 & 100.0\%\\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Cada linha é um método implementado: algoritmo declarado no código de origem + níveis de precisão. A coluna de origem só identifica o arquivo, não é uma unidade de comparação entre IAs. $A_f$ é a fração correta entre configurações únicas avaliadas.\normalsize

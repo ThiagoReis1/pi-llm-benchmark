@@ -1,0 +1,12 @@
+{
+  "llm_id": "chatgpt",
+  "platform": "ChatGPT",
+  "prompt_id": "benchmark_prompt_c_single_markdown_block",
+  "prompt_sha256": "preencher com o hash do prompt",
+  "attempt": 1,
+  "extraction_mode": "raw_response",
+  "manual_logic_changes": false,
+  "response_file": "response_original.txt",
+  "response_original_sha256": "preenchido automaticamente",
+  "submission_sha256": "preenchido automaticamente"
+}

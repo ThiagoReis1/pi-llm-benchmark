@@ -1,0 +1,62 @@
+{
+  "plataforma": "chatgpt",
+  "tentativa": 1,
+  "caso": "unknown_algorithm",
+  "algoritmo": "unknown",
+  "digitos": 5,
+  "repeticao": 3,
+  "codigo_fonte": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+  "comando_compilacao": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+    "-lm",
+    "-o",
+    "/tmp/pi_run_vgnczulo/pi_benchmark"
+  ],
+  "comando_execucao": [
+    "/tmp/pi_run_vgnczulo/pi_benchmark",
+    "--algorithm",
+    "unknown",
+    "--digits",
+    "5"
+  ],
+  "tempo_execucao_segundos": 0.004809936000015114,
+  "pico_memoria_kb": 1480.0,
+  "codigo_saida": 1,
+  "resultado_runner": {
+    "ok": false,
+    "error": "processo terminou com código 1",
+    "stderr": "erro: algoritmo desconhecido\n",
+    "stdout": "",
+    "compile_stderr": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:262:12: warning: ‘big_copy’ defined but not used [-Wunused-function]\n  262 | static int big_copy(Big *dst, const Big *src)\n      |            ^~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:82:13: warning: ‘big_from_u32’ defined but not used [-Wunused-function]\n   82 | static void big_from_u32(Big *a, uint32_t x)\n      |             ^~~~~~~~~~~~\n",
+    "compile_stdout": "",
+    "command": [
+      "/tmp/pi_run_vgnczulo/pi_benchmark",
+      "--algorithm",
+      "unknown",
+      "--digits",
+      "5"
+    ],
+    "compile_command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+      "-lm",
+      "-o",
+      "/tmp/pi_run_vgnczulo/pi_benchmark"
+    ],
+    "returncode": 1,
+    "peak_rss_kb": 1480.0,
+    "elapsed": 0.004809936000015114
+  },
+  "saida_stdout_completa": "",
+  "saida_stderr_completa": "erro: algoritmo desconhecido\n",
+  "stderr_compilacao_completo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:262:12: warning: ‘big_copy’ defined but not used [-Wunused-function]\n  262 | static int big_copy(Big *dst, const Big *src)\n      |            ^~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:82:13: warning: ‘big_from_u32’ defined but not used [-Wunused-function]\n   82 | static void big_from_u32(Big *a, uint32_t x)\n      |             ^~~~~~~~~~~~\n"
+}

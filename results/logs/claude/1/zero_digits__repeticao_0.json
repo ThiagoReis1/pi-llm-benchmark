@@ -1,0 +1,62 @@
+{
+  "plataforma": "claude",
+  "tentativa": 1,
+  "caso": "zero_digits",
+  "algoritmo": "chudnovsky",
+  "digitos": 0,
+  "repeticao": 0,
+  "codigo_fonte": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+  "comando_compilacao": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+    "-lm",
+    "-o",
+    "/tmp/pi_run_p21886ks/pi_benchmark"
+  ],
+  "comando_execucao": [
+    "/tmp/pi_run_p21886ks/pi_benchmark",
+    "--algorithm",
+    "chudnovsky",
+    "--digits",
+    "0"
+  ],
+  "tempo_execucao_segundos": 0.004752459999963321,
+  "pico_memoria_kb": 248.0,
+  "codigo_saida": 2,
+  "resultado_runner": {
+    "ok": false,
+    "error": "processo terminou com código 2",
+    "stderr": "erro: --digits deve estar entre 1 e 18\n",
+    "stdout": "",
+    "compile_stderr": "",
+    "compile_stdout": "",
+    "command": [
+      "/tmp/pi_run_p21886ks/pi_benchmark",
+      "--algorithm",
+      "chudnovsky",
+      "--digits",
+      "0"
+    ],
+    "compile_command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+      "-lm",
+      "-o",
+      "/tmp/pi_run_p21886ks/pi_benchmark"
+    ],
+    "returncode": 2,
+    "peak_rss_kb": 248.0,
+    "elapsed": 0.004752459999963321
+  },
+  "saida_stdout_completa": "",
+  "saida_stderr_completa": "erro: --digits deve estar entre 1 e 18\n",
+  "stderr_compilacao_completo": ""
+}

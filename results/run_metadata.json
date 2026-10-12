@@ -1,0 +1,245 @@
+{
+  "run_at_utc": "2026-10-11T23:09:31Z",
+  "repetitions": 5,
+  "timeout_seconds": 20.0,
+  "memory_mb": 1024,
+  "workers": 4,
+  "execution_environment": "Linux-6.18.38+-x86_64-with-glibc2.39",
+  "python_version": "3.12.3",
+  "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "compiler_flags": [
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-lm"
+  ],
+  "timing_scope": "compiled process execution only; compile time excluded",
+  "correctness_unit": "one outcome per unique method-implementation-precision configuration (algorithm + C source file)",
+  "repetition_role": "repetitions are used only to summarize execution-time variation; identical deterministic outputs are not counted as independent outcomes",
+  "unique_invalid_scenarios_rejected": 16,
+  "execution_summary": {
+    "inicio_utc": "2026-10-11T23:09:33Z",
+    "fim_utc": "2026-10-11T23:10:41Z",
+    "tempo_total_parede_segundos": 68.21597603099997,
+    "linhas_brutas_de_repeticao_preservadas_somente_para_auditoria": 1880,
+    "configuracoes_decimais_unicas": 360,
+    "medicoes_de_tempo_repetidas": 1710,
+    "casos_invalidos_unicos_rejeitados": 16,
+    "falhas_unicas_no_gate_de_compilacao": 0,
+    "origens_com_falha_no_gate": [],
+    "por_metodo_implementado": {
+      "chatgpt/atan23": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 1,
+          "incorrect": 17,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.00486429049999515
+      },
+      "chatgpt/euler": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 0,
+          "incorrect": 0,
+          "execution_failure": 18,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": null
+      },
+      "chatgpt/gauss": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 5,
+          "incorrect": 13,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.005748647000018536
+      },
+      "chatgpt/machin": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 0,
+          "incorrect": 18,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.005470192500013127
+      },
+      "chatgpt/machin7": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 2,
+          "incorrect": 16,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.005204027499985386
+      },
+      "claude/chudnovsky": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.004684282000027906
+      },
+      "claude/euler": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.004723876500008828
+      },
+      "claude/machin": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.004807152500063694
+      },
+      "claude/ramanujan": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.0047012009999889415
+      },
+      "claude/takano": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.0047232160000021395
+      },
+      "gemini/euler": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.004945916499991654
+      },
+      "gemini/machin": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.004907236000008197
+      },
+      "gemini/newton": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.004725087499991787
+      },
+      "gemini/nilakantha": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.005553720499960946
+      },
+      "gemini/ramanujan": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.004899927500048307
+      },
+      "grok/gauss": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.005522441500033892
+      },
+      "grok/hutton": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.005330017000062526
+      },
+      "grok/machin": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.005129055999987031
+      },
+      "grok/nilakantha": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 8,
+          "incorrect": 10,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.0048367920000487175
+      },
+      "grok/twinarctan": {
+        "configuracoes_unicas": 18,
+        "desfechos": {
+          "correct": 18,
+          "incorrect": 0,
+          "execution_failure": 0,
+          "inconsistent": 0
+        },
+        "mediana_dos_tempos_medianos_segundos": 0.005265726000061477
+      }
+    },
+    "observacao": "Cada configuração algoritmo-precisão tem um desfecho; repetições são usadas somente para sumarizar o tempo. Não há agregação ou score por origem de IA."
+  },
+  "logs_directory": "results/logs",
+  "raw_repetition_records_preserved_for_audit": 1880,
+  "raw_repetition_records_scope": "stored execution-log rows only; not independent correctness outcomes or benchmark result counts",
+  "unique_decimal_configurations": 360,
+  "status_counts": {
+    "ok": 1710,
+    "error": 170
+  },
+  "status_counts_scope": "counts in the preserved raw records only",
+  "note": "Preserve os arquivos de evidência e não altere o código coletado."
+}

@@ -1,0 +1,61 @@
+{
+  "plataforma": "chatgpt",
+  "tentativa": 1,
+  "caso": "machin_6",
+  "algoritmo": "machin",
+  "digitos": 6,
+  "repeticao": 0,
+  "codigo_fonte": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+  "comando_compilacao": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+    "-lm",
+    "-o",
+    "/tmp/pi_run_62f5ckkr/pi_benchmark"
+  ],
+  "comando_execucao": [
+    "/tmp/pi_run_62f5ckkr/pi_benchmark",
+    "--algorithm",
+    "machin",
+    "--digits",
+    "6"
+  ],
+  "tempo_execucao_segundos": 0.006433399000002282,
+  "pico_memoria_kb": null,
+  "codigo_saida": 0,
+  "resultado_runner": {
+    "ok": true,
+    "elapsed": 0.006433399000002282,
+    "peak_rss_kb": null,
+    "stdout": "{\"value\":\"1.256284\",\"iterations\":17}\n",
+    "stderr": "",
+    "compile_stderr": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:262:12: warning: ‘big_copy’ defined but not used [-Wunused-function]\n  262 | static int big_copy(Big *dst, const Big *src)\n      |            ^~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:82:13: warning: ‘big_from_u32’ defined but not used [-Wunused-function]\n   82 | static void big_from_u32(Big *a, uint32_t x)\n      |             ^~~~~~~~~~~~\n",
+    "compile_stdout": "",
+    "command": [
+      "/tmp/pi_run_62f5ckkr/pi_benchmark",
+      "--algorithm",
+      "machin",
+      "--digits",
+      "6"
+    ],
+    "compile_command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c",
+      "-lm",
+      "-o",
+      "/tmp/pi_run_62f5ckkr/pi_benchmark"
+    ],
+    "returncode": 0
+  },
+  "saida_stdout_completa": "{\"value\":\"1.256284\",\"iterations\":17}\n",
+  "saida_stderr_completa": "",
+  "stderr_compilacao_completo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:262:12: warning: ‘big_copy’ defined but not used [-Wunused-function]\n  262 | static int big_copy(Big *dst, const Big *src)\n      |            ^~~~~~~~\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/chatgpt/attempt_01/submission.c:82:13: warning: ‘big_from_u32’ defined but not used [-Wunused-function]\n   82 | static void big_from_u32(Big *a, uint32_t x)\n      |             ^~~~~~~~~~~~\n"
+}

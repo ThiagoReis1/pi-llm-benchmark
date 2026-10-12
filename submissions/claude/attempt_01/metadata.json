@@ -1,0 +1,12 @@
+{
+  "llm_id": "claude",
+  "platform": "Claude",
+  "prompt_id": "benchmark_prompt_c_single_markdown_block",
+  "prompt_sha256": "24176b7827151e9ba319e3ea05a0b33403d8a3e43556896356cf3cd583b2133d",
+  "attempt": 1,
+  "extraction_mode": "raw_response",
+  "manual_logic_changes": false,
+  "response_file": "response_original.txt",
+  "response_original_sha256": "db81ea313c1ee53abc0d6efa4eac842948a2874e42d87d9629e28f9ea5bd8b3e",
+  "submission_sha256": "db81ea313c1ee53abc0d6efa4eac842948a2874e42d87d9629e28f9ea5bd8b3e"
+}

@@ -1,0 +1,25 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}p{1.45cm}p{5.15cm}p{8.15cm}@{}}
+\caption{Recomendações em ordem e justificativas atribuídas às cinco respostas. A ordem é a declarada; justificativas não são resultados experimentais nem notas das ferramentas.}\label{tab:recommendations}\\
+\toprule
+Origem da resposta & Método: tipo de série (ordem declarada) & Justificativa correspondente\\
+\midrule
+\endfirsthead
+\toprule
+Origem da resposta & Método: tipo de série (ordem declarada) & Justificativa correspondente\\
+\midrule
+\endhead
+\textbf{ChatGPT} & \textbf{1.} \texttt{machin7}: série de arco-tangente\\[-1pt]\textbf{2.} \texttt{gauss}: série de arco-tangente\\[-1pt]\textbf{3.} \texttt{machin}: série de arco-tangente\\[-1pt]\textbf{4.} \texttt{atan23}: série de arco-tangente\\[-1pt]\textbf{5.} \texttt{euler}: transformação de Euler da Gregory--Leibniz & \textbf{1.} Argumentos pequenos; poucas iterações e estabilidade.\\[-1pt]\textbf{2.} Convergência rápida e parcelas com razões pequenas.\\[-1pt]\textbf{3.} Fórmula clássica, simples e dita suficiente para 18 casas.\\[-1pt]\textbf{4.} Identidade independente; reconhecida como mais lenta.\\[-1pt]\textbf{5.} Transformação acelerada, escolhida para comparação independente.\\
+\addlinespace[4pt]
+\textbf{Claude} & \textbf{1.} \texttt{chudnovsky}: série hipergeométrica\\[-1pt]\textbf{2.} \texttt{ramanujan}: série hipergeométrica\\[-1pt]\textbf{3.} \texttt{takano}: série de arco-tangente\\[-1pt]\textbf{4.} \texttt{machin}: série de arco-tangente\\[-1pt]\textbf{5.} \texttt{euler}: série de razão fatorial/duplo-fatorial & \textbf{1.} Alegadas aproximadamente 14 casas por termo e convergência muito rápida.\\[-1pt]\textbf{2.} Alegadas aproximadamente 8 casas por termo; termos positivos.\\[-1pt]\textbf{3.} Argumentos pequenos e divisões por inteiros pequenos.\\[-1pt]\textbf{4.} Fórmula histórica, robusta e simples.\\[-1pt]\textbf{5.} Razão dos termos próxima de 1/2; convergência descrita como linear.\\
+\addlinespace[4pt]
+\textbf{Gemini} & \textbf{1.} \texttt{machin}: série de arco-tangente\\[-1pt]\textbf{2.} \texttt{euler}: série de razão fatorial/duplo-fatorial\\[-1pt]\textbf{3.} \texttt{newton}: série de potência do arco-seno\\[-1pt]\textbf{4.} \texttt{nilakantha}: série alternada de Nilakantha\\[-1pt]\textbf{5.} \texttt{ramanujan}: série hipergeométrica & \textbf{1.} Fórmula clássica; razões geométricas 1/25 e 1/57121.\\[-1pt]\textbf{2.} Razão 1/2; alegadas aproximadamente 0,301 casas por termo.\\[-1pt]\textbf{3.} Série de arco-seno; alegadas aproximadamente 0,602 casas por termo.\\[-1pt]\textbf{4.} Convergência algébrica lenta; proposta como linha de base.\\[-1pt]\textbf{5.} Alegadas aproximadamente 8 casas decimais por iteração.\\
+\addlinespace[4pt]
+\textbf{Grok} & \textbf{1.} \texttt{nilakantha}: série alternada de Nilakantha\\[-1pt]\textbf{2.} \texttt{machin}: série de arco-tangente\\[-1pt]\textbf{3.} \texttt{gauss}: série de arco-tangente\\[-1pt]\textbf{4.} \texttt{hutton}: série de arco-tangente\\[-1pt]\textbf{5.} \texttt{twinarctan}: série de arco-tangente & \textbf{1.} Série simples; cerca de um milhão de termos seriam suficientes para 18 casas.\\[-1pt]\textbf{2.} Convergência muito rápida e poucas dezenas de termos.\\[-1pt]\textbf{3.} Argumentos menores; convergência e estabilidade destacadas.\\[-1pt]\textbf{4.} Dois termos de arco-tangente; método rápido e simples.\\[-1pt]\textbf{5.} Identidade didática, considerada suficiente para 18 casas.\\
+\addlinespace[4pt]
+\bottomrule
+\end{longtable}
+\endgroup

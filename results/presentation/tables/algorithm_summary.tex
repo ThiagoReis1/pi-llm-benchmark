@@ -1,0 +1,33 @@
+\begin{longtable}{p{1.8cm}p{1.5cm}rrrp{1.5cm}r}
+\caption{Métricas por método implementado: configurações corretas, tempo mediano e ajuste empírico. A origem identifica o arquivo C.}\label{tab:method-summary}\\
+\toprule
+Método & Origem do código & Corretas/total & $A_f$ & Mediana (s) & Ajuste & $\alpha$\\
+\midrule
+\endfirsthead
+\toprule
+Método & Origem do código & Corretas/total & $A_f$ & Mediana (s) & Ajuste & $\alpha$\\
+\midrule
+\endhead
+1/18 & 0.056 & 0.00486 & potência & -0.03\\
+18/18 & 1.000 & 0.00468 & exponencial & -0.00\\
+0/18 & 0.000 & --- & não estimável & ---\\
+18/18 & 1.000 & 0.00472 & potência & -0.01\\
+18/18 & 1.000 & 0.00495 & exponencial & -0.03\\
+5/18 & 0.278 & 0.00575 & potência & 0.06\\
+18/18 & 1.000 & 0.00552 & exponencial & 0.02\\
+18/18 & 1.000 & 0.00533 & exponencial & 0.08\\
+0/18 & 0.000 & 0.00547 & exponencial & -0.03\\
+18/18 & 1.000 & 0.00481 & potência & 0.00\\
+18/18 & 1.000 & 0.00491 & exponencial & 0.05\\
+18/18 & 1.000 & 0.00513 & exponencial & 0.03\\
+2/18 & 0.111 & 0.00520 & exponencial & 0.04\\
+18/18 & 1.000 & 0.00473 & exponencial & -0.01\\
+18/18 & 1.000 & 0.00555 & exponencial & 1.08\\
+8/18 & 0.444 & 0.00484 & potência & -0.01\\
+18/18 & 1.000 & 0.00470 & potência & -0.02\\
+18/18 & 1.000 & 0.00490 & exponencial & 0.02\\
+18/18 & 1.000 & 0.00472 & potência & -0.00\\
+18/18 & 1.000 & 0.00527 & exponencial & -0.03\\
+\bottomrule
+\end{longtable}
+\par\smallskip\footnotesize Cada linha corresponde a um algoritmo em um arquivo C específico; implementações do mesmo algoritmo não são combinadas. O tempo é a mediana por configuração; as cinco repetições são observações temporais.\normalsize

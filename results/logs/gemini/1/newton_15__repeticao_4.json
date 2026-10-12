@@ -1,0 +1,61 @@
+{
+  "plataforma": "gemini",
+  "tentativa": 1,
+  "caso": "newton_15",
+  "algoritmo": "newton",
+  "digitos": 15,
+  "repeticao": 4,
+  "codigo_fonte": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+  "comando_compilacao": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+    "-lm",
+    "-o",
+    "/tmp/pi_run_aqzfi9_n/pi_benchmark"
+  ],
+  "comando_execucao": [
+    "/tmp/pi_run_aqzfi9_n/pi_benchmark",
+    "--algorithm",
+    "newton",
+    "--digits",
+    "15"
+  ],
+  "tempo_execucao_segundos": 0.005046442999969258,
+  "pico_memoria_kb": 264.0,
+  "codigo_saida": 0,
+  "resultado_runner": {
+    "ok": true,
+    "elapsed": 0.005046442999969258,
+    "peak_rss_kb": 264.0,
+    "stdout": "{\"value\":\"3.141592653589793\",\"iterations\":26}\n",
+    "stderr": "",
+    "compile_stderr": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c: In function ‘main’:\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c:247:27: warning: ‘%s’ directive output may be truncated writing up to 63 bytes into a region of size between 52 and 62 [-Wformat-truncation=]\n  247 |     snprintf(out, 64, \"%d.%s\", int_part, frac);\n      |                           ^~             ~~~~\nIn file included from /usr/include/stdio.h:980,\n                 from /home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c:38:\nIn function ‘snprintf’,\n    inlined from ‘bignum_format’ at /home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c:247:5,\n    inlined from ‘main’ at /home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c:469:5:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:54:10: note: ‘__builtin___snprintf_chk’ output between 3 and 76 bytes into a destination of size 64\n   54 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   55 |                                    __glibc_objsize (__s), __fmt,\n      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   56 |                                    __va_arg_pack ());\n      |                                    ~~~~~~~~~~~~~~~~~\n",
+    "compile_stdout": "",
+    "command": [
+      "/tmp/pi_run_aqzfi9_n/pi_benchmark",
+      "--algorithm",
+      "newton",
+      "--digits",
+      "15"
+    ],
+    "compile_command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c",
+      "-lm",
+      "-o",
+      "/tmp/pi_run_aqzfi9_n/pi_benchmark"
+    ],
+    "returncode": 0
+  },
+  "saida_stdout_completa": "{\"value\":\"3.141592653589793\",\"iterations\":26}\n",
+  "saida_stderr_completa": "",
+  "stderr_compilacao_completo": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c: In function ‘main’:\n/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c:247:27: warning: ‘%s’ directive output may be truncated writing up to 63 bytes into a region of size between 52 and 62 [-Wformat-truncation=]\n  247 |     snprintf(out, 64, \"%d.%s\", int_part, frac);\n      |                           ^~             ~~~~\nIn file included from /usr/include/stdio.h:980,\n                 from /home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c:38:\nIn function ‘snprintf’,\n    inlined from ‘bignum_format’ at /home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c:247:5,\n    inlined from ‘main’ at /home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/gemini/attempt_01/submission.c:469:5:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:54:10: note: ‘__builtin___snprintf_chk’ output between 3 and 76 bytes into a destination of size 64\n   54 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   55 |                                    __glibc_objsize (__s), __fmt,\n      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   56 |                                    __va_arg_pack ());\n      |                                    ~~~~~~~~~~~~~~~~~\n"
+}

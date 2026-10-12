@@ -1,0 +1,182 @@
+[
+  {
+    "source": "chatgpt",
+    "source_label": "ChatGPT",
+    "rank": 1,
+    "algorithm": "machin7",
+    "rationale": "Argumentos pequenos; poucas iterações e estabilidade.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "chatgpt",
+    "source_label": "ChatGPT",
+    "rank": 2,
+    "algorithm": "gauss",
+    "rationale": "Convergência rápida e parcelas com razões pequenas.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "chatgpt",
+    "source_label": "ChatGPT",
+    "rank": 3,
+    "algorithm": "machin",
+    "rationale": "Fórmula clássica, simples e dita suficiente para 18 casas.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "chatgpt",
+    "source_label": "ChatGPT",
+    "rank": 4,
+    "algorithm": "atan23",
+    "rationale": "Identidade independente; reconhecida como mais lenta.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "chatgpt",
+    "source_label": "ChatGPT",
+    "rank": 5,
+    "algorithm": "euler",
+    "rationale": "Transformação acelerada, escolhida para comparação independente.",
+    "series_code": "TG",
+    "series_type": "Transformação de Euler da série Gregory–Leibniz"
+  },
+  {
+    "source": "claude",
+    "source_label": "Claude",
+    "rank": 1,
+    "algorithm": "chudnovsky",
+    "rationale": "Alegadas aproximadamente 14 casas por termo e convergência muito rápida.",
+    "series_code": "HG",
+    "series_type": "Série hipergeométrica / razão fatorial"
+  },
+  {
+    "source": "claude",
+    "source_label": "Claude",
+    "rank": 2,
+    "algorithm": "ramanujan",
+    "rationale": "Alegadas aproximadamente 8 casas por termo; termos positivos.",
+    "series_code": "HG",
+    "series_type": "Série hipergeométrica / razão fatorial"
+  },
+  {
+    "source": "claude",
+    "source_label": "Claude",
+    "rank": 3,
+    "algorithm": "takano",
+    "rationale": "Argumentos pequenos e divisões por inteiros pequenos.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "claude",
+    "source_label": "Claude",
+    "rank": 4,
+    "algorithm": "machin",
+    "rationale": "Fórmula histórica, robusta e simples.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "claude",
+    "source_label": "Claude",
+    "rank": 5,
+    "algorithm": "euler",
+    "rationale": "Razão dos termos próxima de 1/2; convergência descrita como linear.",
+    "series_code": "FD",
+    "series_type": "Série de razão fatorial/duplo-fatorial"
+  },
+  {
+    "source": "gemini",
+    "source_label": "Gemini",
+    "rank": 1,
+    "algorithm": "machin",
+    "rationale": "Fórmula clássica; razões geométricas 1/25 e 1/57121.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "gemini",
+    "source_label": "Gemini",
+    "rank": 2,
+    "algorithm": "euler",
+    "rationale": "Razão 1/2; alegadas aproximadamente 0,301 casas por termo.",
+    "series_code": "FD",
+    "series_type": "Série de razão fatorial/duplo-fatorial"
+  },
+  {
+    "source": "gemini",
+    "source_label": "Gemini",
+    "rank": 3,
+    "algorithm": "newton",
+    "rationale": "Série de arco-seno; alegadas aproximadamente 0,602 casas por termo.",
+    "series_code": "AS",
+    "series_type": "Série de potência do arco-seno"
+  },
+  {
+    "source": "gemini",
+    "source_label": "Gemini",
+    "rank": 4,
+    "algorithm": "nilakantha",
+    "rationale": "Convergência algébrica lenta; proposta como linha de base.",
+    "series_code": "NAK",
+    "series_type": "Série algébrica alternada de Nilakantha"
+  },
+  {
+    "source": "gemini",
+    "source_label": "Gemini",
+    "rank": 5,
+    "algorithm": "ramanujan",
+    "rationale": "Alegadas aproximadamente 8 casas decimais por iteração.",
+    "series_code": "HG",
+    "series_type": "Série hipergeométrica / razão fatorial"
+  },
+  {
+    "source": "grok",
+    "source_label": "Grok",
+    "rank": 1,
+    "algorithm": "nilakantha",
+    "rationale": "Série simples; cerca de um milhão de termos seriam suficientes para 18 casas.",
+    "series_code": "NAK",
+    "series_type": "Série algébrica alternada de Nilakantha"
+  },
+  {
+    "source": "grok",
+    "source_label": "Grok",
+    "rank": 2,
+    "algorithm": "machin",
+    "rationale": "Convergência muito rápida e poucas dezenas de termos.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "grok",
+    "source_label": "Grok",
+    "rank": 3,
+    "algorithm": "gauss",
+    "rationale": "Argumentos menores; convergência e estabilidade destacadas.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "grok",
+    "source_label": "Grok",
+    "rank": 4,
+    "algorithm": "hutton",
+    "rationale": "Dois termos de arco-tangente; método rápido e simples.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  },
+  {
+    "source": "grok",
+    "source_label": "Grok",
+    "rank": 5,
+    "algorithm": "twinarctan",
+    "rationale": "Identidade didática, considerada suficiente para 18 casas.",
+    "series_code": "AT",
+    "series_type": "Série de arco-tangente (identidades)"
+  }
+]

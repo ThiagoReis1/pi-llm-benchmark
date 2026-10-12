@@ -1,0 +1,61 @@
+{
+  "plataforma": "claude",
+  "tentativa": 1,
+  "caso": "ramanujan_6",
+  "algoritmo": "ramanujan",
+  "digitos": 6,
+  "repeticao": 1,
+  "codigo_fonte": "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+  "comando_compilacao": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+    "-lm",
+    "-o",
+    "/tmp/pi_run_op5dzwz9/pi_benchmark"
+  ],
+  "comando_execucao": [
+    "/tmp/pi_run_op5dzwz9/pi_benchmark",
+    "--algorithm",
+    "ramanujan",
+    "--digits",
+    "6"
+  ],
+  "tempo_execucao_segundos": 0.00435719600000084,
+  "pico_memoria_kb": 200.0,
+  "codigo_saida": 0,
+  "resultado_runner": {
+    "ok": true,
+    "elapsed": 0.00435719600000084,
+    "peak_rss_kb": 200.0,
+    "stdout": "{\"value\":\"3.141593\",\"iterations\":6}\n",
+    "stderr": "",
+    "compile_stderr": "",
+    "compile_stdout": "",
+    "command": [
+      "/tmp/pi_run_op5dzwz9/pi_benchmark",
+      "--algorithm",
+      "ramanujan",
+      "--digits",
+      "6"
+    ],
+    "compile_command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "/home/ubuntu/work_pi_llm/pi-llm-benchmark/submissions/claude/attempt_01/submission.c",
+      "-lm",
+      "-o",
+      "/tmp/pi_run_op5dzwz9/pi_benchmark"
+    ],
+    "returncode": 0
+  },
+  "saida_stdout_completa": "{\"value\":\"3.141593\",\"iterations\":6}\n",
+  "saida_stderr_completa": "",
+  "stderr_compilacao_completo": ""
+}
