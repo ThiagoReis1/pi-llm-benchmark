@@ -1,0 +1,438 @@
+{
+ "ambiente": {
+  "plataforma": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39",
+  "python": "3.13.18",
+  "cpu_fixada": 1,
+  "n_cpus_visiveis": 2,
+  "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "repeticoes": 10,
+  "aquecimento": 1,
+  "modelo_cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz"
+ },
+ "medidas": {
+  "chatgpt/machin7/1": {
+   "latencia_mediana_s": 0.0017082470000104877,
+   "latencia_min_s": 0.001630169999998543,
+   "latencia_max_s": 0.0017676780000783765,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/machin7/9": {
+   "latencia_mediana_s": 0.0016625400000407353,
+   "latencia_min_s": 0.001632560999951238,
+   "latencia_max_s": 0.0017521210000950305,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/machin7/18": {
+   "latencia_mediana_s": 0.0017083295000475118,
+   "latencia_min_s": 0.001648279000050934,
+   "latencia_max_s": 0.0018686810000190235,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/gauss/1": {
+   "latencia_mediana_s": 0.0017222844999764675,
+   "latencia_min_s": 0.0016606960000444815,
+   "latencia_max_s": 0.00285116800000651,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/gauss/9": {
+   "latencia_mediana_s": 0.0016883195000900741,
+   "latencia_min_s": 0.0016419969999788009,
+   "latencia_max_s": 0.0017685059999621444,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/gauss/18": {
+   "latencia_mediana_s": 0.0016764079999802561,
+   "latencia_min_s": 0.001632142000062231,
+   "latencia_max_s": 0.0017423699999881137,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/machin/1": {
+   "latencia_mediana_s": 0.0016744204999668,
+   "latencia_min_s": 0.0016455720000294605,
+   "latencia_max_s": 0.001745592000020224,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/machin/9": {
+   "latencia_mediana_s": 0.0016655944999683925,
+   "latencia_min_s": 0.0016274349999321203,
+   "latencia_max_s": 0.0017951270000367003,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/machin/18": {
+   "latencia_mediana_s": 0.0016786054999897715,
+   "latencia_min_s": 0.0016367210000680643,
+   "latencia_max_s": 0.0017802930000243578,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/atan23/1": {
+   "latencia_mediana_s": 0.0016837910000049305,
+   "latencia_min_s": 0.0016304980000541036,
+   "latencia_max_s": 0.0018070390000275438,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/atan23/9": {
+   "latencia_mediana_s": 0.0016718775000299502,
+   "latencia_min_s": 0.0016423250000343614,
+   "latencia_max_s": 0.00178048200007197,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/atan23/18": {
+   "latencia_mediana_s": 0.001669206999963535,
+   "latencia_min_s": 0.0016325839999353775,
+   "latencia_max_s": 0.0017370990000245001,
+   "pico_memoria_kib_mediana": 1688.0,
+   "pico_memoria_kib_max": 1688
+  },
+  "chatgpt/euler/1": {
+   "latencia_mediana_s": 0.0017097850000027393,
+   "latencia_min_s": 0.001669267000011132,
+   "latencia_max_s": 0.0018091050000066389,
+   "pico_memoria_kib_mediana": 1380.0,
+   "pico_memoria_kib_max": 1380
+  },
+  "chatgpt/euler/9": {
+   "latencia_mediana_s": 0.0017032840000297256,
+   "latencia_min_s": 0.0016672750000452652,
+   "latencia_max_s": 0.0018509500000618573,
+   "pico_memoria_kib_mediana": 1380.0,
+   "pico_memoria_kib_max": 1380
+  },
+  "chatgpt/euler/18": {
+   "latencia_mediana_s": 0.0017053185000008853,
+   "latencia_min_s": 0.0016320859999723325,
+   "latencia_max_s": 0.0018291389999376406,
+   "pico_memoria_kib_mediana": 1380.0,
+   "pico_memoria_kib_max": 1380
+  },
+  "claude/chudnovsky/1": {
+   "latencia_mediana_s": 0.001686347999964255,
+   "latencia_min_s": 0.0016382510000312323,
+   "latencia_max_s": 0.0017613530000062383,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/chudnovsky/9": {
+   "latencia_mediana_s": 0.0017044734999558386,
+   "latencia_min_s": 0.0016462170000295373,
+   "latencia_max_s": 0.0017838460000803025,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/chudnovsky/18": {
+   "latencia_mediana_s": 0.0016841540000314126,
+   "latencia_min_s": 0.001638792999983707,
+   "latencia_max_s": 0.0018236219999607783,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/ramanujan/1": {
+   "latencia_mediana_s": 0.0016974819999973079,
+   "latencia_min_s": 0.0016677209999897968,
+   "latencia_max_s": 0.0017954970001028414,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/ramanujan/9": {
+   "latencia_mediana_s": 0.0017232934999356075,
+   "latencia_min_s": 0.001662643000031494,
+   "latencia_max_s": 0.0018183160000262433,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/ramanujan/18": {
+   "latencia_mediana_s": 0.001688293500023974,
+   "latencia_min_s": 0.001653657000019848,
+   "latencia_max_s": 0.0018191379999734636,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/takano/1": {
+   "latencia_mediana_s": 0.0016755395000132012,
+   "latencia_min_s": 0.0016164510000180599,
+   "latencia_max_s": 0.001778842000021541,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/takano/9": {
+   "latencia_mediana_s": 0.0016808485000296969,
+   "latencia_min_s": 0.0016607919999387377,
+   "latencia_max_s": 0.0017198479999933625,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/takano/18": {
+   "latencia_mediana_s": 0.001664548000007926,
+   "latencia_min_s": 0.0016354090000731958,
+   "latencia_max_s": 0.0018092529999194085,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/machin/1": {
+   "latencia_mediana_s": 0.0016932450000126664,
+   "latencia_min_s": 0.0016436269999076103,
+   "latencia_max_s": 0.0018274850000352671,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/machin/9": {
+   "latencia_mediana_s": 0.001702334000015071,
+   "latencia_min_s": 0.0016551119999803632,
+   "latencia_max_s": 0.0017884979999962525,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/machin/18": {
+   "latencia_mediana_s": 0.0016755449999550365,
+   "latencia_min_s": 0.001656291000017518,
+   "latencia_max_s": 0.0018078159999959098,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/euler/1": {
+   "latencia_mediana_s": 0.0016891065000095296,
+   "latencia_min_s": 0.0016416590000289943,
+   "latencia_max_s": 0.0018337379999593395,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/euler/9": {
+   "latencia_mediana_s": 0.0016836610000154906,
+   "latencia_min_s": 0.001625580999984777,
+   "latencia_max_s": 0.001761656999974548,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "claude/euler/18": {
+   "latencia_mediana_s": 0.0016715859999862914,
+   "latencia_min_s": 0.0016319949999115124,
+   "latencia_max_s": 0.001704376000020602,
+   "pico_memoria_kib_mediana": 1684.0,
+   "pico_memoria_kib_max": 1684
+  },
+  "gemini/machin/1": {
+   "latencia_mediana_s": 0.0016563065000241295,
+   "latencia_min_s": 0.0016221719999975903,
+   "latencia_max_s": 0.001760066999963783,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/machin/9": {
+   "latencia_mediana_s": 0.0016785905000347157,
+   "latencia_min_s": 0.0016502400000035777,
+   "latencia_max_s": 0.0017310499999894091,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/machin/18": {
+   "latencia_mediana_s": 0.0016784184999778518,
+   "latencia_min_s": 0.0016100269999697048,
+   "latencia_max_s": 0.0018136710000362655,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/euler/1": {
+   "latencia_mediana_s": 0.0016737845000420748,
+   "latencia_min_s": 0.0016272420000404964,
+   "latencia_max_s": 0.0017426390000991887,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/euler/9": {
+   "latencia_mediana_s": 0.0016618230000062795,
+   "latencia_min_s": 0.0016012030000638333,
+   "latencia_max_s": 0.0017568110000638626,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/euler/18": {
+   "latencia_mediana_s": 0.0016586029999530183,
+   "latencia_min_s": 0.001592754000057539,
+   "latencia_max_s": 0.001756564999936927,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/newton/1": {
+   "latencia_mediana_s": 0.001672708999990391,
+   "latencia_min_s": 0.0016350780000493614,
+   "latencia_max_s": 0.0017882270000200151,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/newton/9": {
+   "latencia_mediana_s": 0.0016372935000390498,
+   "latencia_min_s": 0.0015960609999865483,
+   "latencia_max_s": 0.001716417000011461,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/newton/18": {
+   "latencia_mediana_s": 0.0016452465000043048,
+   "latencia_min_s": 0.001605198999982349,
+   "latencia_max_s": 0.0016799060000494137,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/nilakantha/1": {
+   "latencia_mediana_s": 0.001687375000017255,
+   "latencia_min_s": 0.0016038730000218493,
+   "latencia_max_s": 0.0018058580000115398,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/nilakantha/9": {
+   "latencia_mediana_s": 0.0022458694999727413,
+   "latencia_min_s": 0.002198217999989538,
+   "latencia_max_s": 0.0023030770000787015,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/nilakantha/18": {
+   "latencia_mediana_s": 0.5676640954999925,
+   "latencia_min_s": 0.5628089829999681,
+   "latencia_max_s": 0.6014330819999714,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/ramanujan/1": {
+   "latencia_mediana_s": 0.0017777874999751475,
+   "latencia_min_s": 0.0017213339999671007,
+   "latencia_max_s": 0.0018410879999919416,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/ramanujan/9": {
+   "latencia_mediana_s": 0.0018036639999650106,
+   "latencia_min_s": 0.0017296209999813072,
+   "latencia_max_s": 0.0019779849999395083,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "gemini/ramanujan/18": {
+   "latencia_mediana_s": 0.0017630629999985103,
+   "latencia_min_s": 0.0016981660000965348,
+   "latencia_max_s": 0.001866067999912957,
+   "pico_memoria_kib_mediana": 1680.0,
+   "pico_memoria_kib_max": 1680
+  },
+  "grok/nilakantha/1": {
+   "latencia_mediana_s": 0.001823230500065165,
+   "latencia_min_s": 0.001770972000031179,
+   "latencia_max_s": 0.001960284999995565,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/nilakantha/9": {
+   "latencia_mediana_s": 0.0018184630000064317,
+   "latencia_min_s": 0.001760547999992923,
+   "latencia_max_s": 0.002147176999983458,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/nilakantha/18": {
+   "latencia_mediana_s": 0.001819479499999943,
+   "latencia_min_s": 0.0017920310000363315,
+   "latencia_max_s": 0.002354680000053122,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/machin/1": {
+   "latencia_mediana_s": 0.0017742184999747224,
+   "latencia_min_s": 0.0017211030000225946,
+   "latencia_max_s": 0.0019285670000499522,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/machin/9": {
+   "latencia_mediana_s": 0.0017550454999764042,
+   "latencia_min_s": 0.0017067630000155987,
+   "latencia_max_s": 0.001852730999985397,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/machin/18": {
+   "latencia_mediana_s": 0.001763769500030321,
+   "latencia_min_s": 0.0017340670000294267,
+   "latencia_max_s": 0.0019446090000201366,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/gauss/1": {
+   "latencia_mediana_s": 0.0017612959999837585,
+   "latencia_min_s": 0.0017068409999865253,
+   "latencia_max_s": 0.001858096999967529,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/gauss/9": {
+   "latencia_mediana_s": 0.0017881269999975302,
+   "latencia_min_s": 0.0017444779999777893,
+   "latencia_max_s": 0.00211223600001631,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/gauss/18": {
+   "latencia_mediana_s": 0.0017822439999690687,
+   "latencia_min_s": 0.0017174780000459577,
+   "latencia_max_s": 0.0018904199999951743,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/hutton/1": {
+   "latencia_mediana_s": 0.0017457354999237396,
+   "latencia_min_s": 0.0016983809999828736,
+   "latencia_max_s": 0.0018101160000014715,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/hutton/9": {
+   "latencia_mediana_s": 0.0017417349999391263,
+   "latencia_min_s": 0.0017096349999974336,
+   "latencia_max_s": 0.0018212999999605017,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/hutton/18": {
+   "latencia_mediana_s": 0.0017468269999767472,
+   "latencia_min_s": 0.00172094599997763,
+   "latencia_max_s": 0.0018966809999483303,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/twinarctan/1": {
+   "latencia_mediana_s": 0.0017782655000360137,
+   "latencia_min_s": 0.0017123299999184383,
+   "latencia_max_s": 0.001853776999951151,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/twinarctan/9": {
+   "latencia_mediana_s": 0.0017487089999690397,
+   "latencia_min_s": 0.0017193400000223846,
+   "latencia_max_s": 0.0018590920000178812,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  },
+  "grok/twinarctan/18": {
+   "latencia_mediana_s": 0.0017667235000544679,
+   "latencia_min_s": 0.001710697000021355,
+   "latencia_max_s": 0.0021135880000429097,
+   "pico_memoria_kib_mediana": 1676.0,
+   "pico_memoria_kib_max": 1676
+  }
+ },
+ "piso_processo_vazio": {
+  "latencia_mediana_s": 0.0017243849999317717,
+  "pico_memoria_kib_mediana": 1244.0
+ }
+}

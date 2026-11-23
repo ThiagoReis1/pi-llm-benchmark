@@ -231,3 +231,20 @@ O runner executa cada submissão em um processo separado, com timeout e limite d
 ## Licença e autoria
 
 Defina a licença e os dados de autoria antes da publicação pública no GitHub. As respostas de modelos de linguagem e os códigos coletados devem ser distribuídos somente quando isso for compatível com os termos das respectivas plataformas.
+
+## Experimentos complementares
+
+Além da rodada principal (`results/`), o repositório inclui testes adicionais sobre os mesmos `submission.c`. Os scripts ficam em `tools/` e as saídas em `results/complementar/`.
+
+| Script | Saída | O que faz |
+|---|---|---|
+| `tools/reparos_contrafactuais.py` | `reparos_contrafactuais.json` | Aplica a menor alteração textual que remove cada causa de falha apontada, a **cópias** dos `submission.c`, e reavalia nas 18 precisões com o mesmo oráculo. Os originais não são alterados. |
+| `tools/medir_complementar.py` | `medicao_complementar.json` | Mede latência e memória de pico (`ru_maxrss` por `wait4`, via lançador C mínimo) em d = 1, 9 e 18, de forma sequencial, com aquecimento e repetições. |
+| — | `replicacao_results.json`, `replicacao_metadata.json` | Replicação completa da rodada (1 *worker*, CPU fixada com `taskset`, outra máquina) com o ambiente registrado. |
+
+```bash
+python tools/reparos_contrafactuais.py . results/complementar/reparos_contrafactuais.json
+python tools/medir_complementar.py . results/complementar/medicao_complementar.json
+```
+
+Requer `gcc` e as dependências de `requirements.txt`.

@@ -1,0 +1,153 @@
+{
+  "D1/atan23": {
+    "original_corretas": 1,
+    "reparado_corretas": 18,
+    "precisoes_reparado": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "D1/gauss": {
+    "original_corretas": 5,
+    "reparado_corretas": 18,
+    "precisoes_reparado": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "D1/machin": {
+    "original_corretas": 0,
+    "reparado_corretas": 0,
+    "precisoes_reparado": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "D1/machin7": {
+    "original_corretas": 2,
+    "reparado_corretas": 18,
+    "precisoes_reparado": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "D1+D4/machin": {
+    "original_corretas": 0,
+    "reparado_corretas": 18,
+    "precisoes_reparado": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "D3/nilakantha": {
+    "original_corretas": 8,
+    "reparado_corretas": 18,
+    "precisoes_reparado": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "D2/euler": {
+    "codigo_saida": 1,
+    "stderr": [
+      "D2 k=27 j=91",
+      "erro: falha numerica no algoritmo"
+    ]
+  }
+}
