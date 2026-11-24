@@ -1,0 +1,2135 @@
+{
+ "compilacao": "gcc -std=c11 -O0 --coverage",
+ "digitos": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18
+ ],
+ "medidas": {
+  "chatgpt/machin7": {
+   "1": {
+    "iterations_informadas": 18,
+    "L": 2172,
+    "H": 89,
+    "linhas_executadas": 184
+   },
+   "2": {
+    "iterations_informadas": 18,
+    "L": 2174,
+    "H": 89,
+    "linhas_executadas": 184
+   },
+   "3": {
+    "iterations_informadas": 18,
+    "L": 2176,
+    "H": 89,
+    "linhas_executadas": 184
+   },
+   "4": {
+    "iterations_informadas": 18,
+    "L": 2186,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "5": {
+    "iterations_informadas": 18,
+    "L": 2180,
+    "H": 89,
+    "linhas_executadas": 184
+   },
+   "6": {
+    "iterations_informadas": 18,
+    "L": 2182,
+    "H": 89,
+    "linhas_executadas": 184
+   },
+   "7": {
+    "iterations_informadas": 18,
+    "L": 2192,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "8": {
+    "iterations_informadas": 18,
+    "L": 2194,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "9": {
+    "iterations_informadas": 18,
+    "L": 2188,
+    "H": 89,
+    "linhas_executadas": 184
+   },
+   "10": {
+    "iterations_informadas": 18,
+    "L": 2205,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "11": {
+    "iterations_informadas": 18,
+    "L": 2199,
+    "H": 89,
+    "linhas_executadas": 184
+   },
+   "12": {
+    "iterations_informadas": 18,
+    "L": 2209,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "13": {
+    "iterations_informadas": 18,
+    "L": 2211,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "14": {
+    "iterations_informadas": 18,
+    "L": 2205,
+    "H": 89,
+    "linhas_executadas": 184
+   },
+   "15": {
+    "iterations_informadas": 18,
+    "L": 2215,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "16": {
+    "iterations_informadas": 18,
+    "L": 2217,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "17": {
+    "iterations_informadas": 18,
+    "L": 2219,
+    "H": 89,
+    "linhas_executadas": 192
+   },
+   "18": {
+    "iterations_informadas": 18,
+    "L": 2221,
+    "H": 89,
+    "linhas_executadas": 192
+   }
+  },
+  "chatgpt/gauss": {
+   "1": {
+    "iterations_informadas": 22,
+    "L": 2711,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "2": {
+    "iterations_informadas": 22,
+    "L": 2713,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "3": {
+    "iterations_informadas": 22,
+    "L": 2723,
+    "H": 114,
+    "linhas_executadas": 196
+   },
+   "4": {
+    "iterations_informadas": 22,
+    "L": 2725,
+    "H": 114,
+    "linhas_executadas": 196
+   },
+   "5": {
+    "iterations_informadas": 22,
+    "L": 2727,
+    "H": 114,
+    "linhas_executadas": 196
+   },
+   "6": {
+    "iterations_informadas": 22,
+    "L": 2721,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "7": {
+    "iterations_informadas": 22,
+    "L": 2723,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "8": {
+    "iterations_informadas": 22,
+    "L": 2733,
+    "H": 114,
+    "linhas_executadas": 196
+   },
+   "9": {
+    "iterations_informadas": 22,
+    "L": 2727,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "10": {
+    "iterations_informadas": 22,
+    "L": 2736,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "11": {
+    "iterations_informadas": 22,
+    "L": 2738,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "12": {
+    "iterations_informadas": 22,
+    "L": 2740,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "13": {
+    "iterations_informadas": 22,
+    "L": 2742,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "14": {
+    "iterations_informadas": 22,
+    "L": 2744,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "15": {
+    "iterations_informadas": 22,
+    "L": 2754,
+    "H": 114,
+    "linhas_executadas": 196
+   },
+   "16": {
+    "iterations_informadas": 22,
+    "L": 2748,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "17": {
+    "iterations_informadas": 22,
+    "L": 2750,
+    "H": 114,
+    "linhas_executadas": 188
+   },
+   "18": {
+    "iterations_informadas": 22,
+    "L": 2760,
+    "H": 114,
+    "linhas_executadas": 196
+   }
+  },
+  "chatgpt/machin": {
+   "1": {
+    "iterations_informadas": 17,
+    "L": 2080,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "2": {
+    "iterations_informadas": 17,
+    "L": 2082,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "3": {
+    "iterations_informadas": 17,
+    "L": 2076,
+    "H": 85,
+    "linhas_executadas": 188
+   },
+   "4": {
+    "iterations_informadas": 17,
+    "L": 2086,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "5": {
+    "iterations_informadas": 17,
+    "L": 2080,
+    "H": 85,
+    "linhas_executadas": 188
+   },
+   "6": {
+    "iterations_informadas": 17,
+    "L": 2082,
+    "H": 85,
+    "linhas_executadas": 188
+   },
+   "7": {
+    "iterations_informadas": 17,
+    "L": 2092,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "8": {
+    "iterations_informadas": 17,
+    "L": 2086,
+    "H": 85,
+    "linhas_executadas": 188
+   },
+   "9": {
+    "iterations_informadas": 17,
+    "L": 2096,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "10": {
+    "iterations_informadas": 17,
+    "L": 2105,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "11": {
+    "iterations_informadas": 17,
+    "L": 2099,
+    "H": 85,
+    "linhas_executadas": 188
+   },
+   "12": {
+    "iterations_informadas": 17,
+    "L": 2109,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "13": {
+    "iterations_informadas": 17,
+    "L": 2103,
+    "H": 85,
+    "linhas_executadas": 188
+   },
+   "14": {
+    "iterations_informadas": 17,
+    "L": 2105,
+    "H": 85,
+    "linhas_executadas": 188
+   },
+   "15": {
+    "iterations_informadas": 17,
+    "L": 2115,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "16": {
+    "iterations_informadas": 17,
+    "L": 2109,
+    "H": 85,
+    "linhas_executadas": 188
+   },
+   "17": {
+    "iterations_informadas": 17,
+    "L": 2119,
+    "H": 85,
+    "linhas_executadas": 196
+   },
+   "18": {
+    "iterations_informadas": 17,
+    "L": 2113,
+    "H": 85,
+    "linhas_executadas": 188
+   }
+  },
+  "chatgpt/atan23": {
+   "1": {
+    "iterations_informadas": 26,
+    "L": 2841,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "2": {
+    "iterations_informadas": 26,
+    "L": 2843,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "3": {
+    "iterations_informadas": 26,
+    "L": 2845,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "4": {
+    "iterations_informadas": 26,
+    "L": 2847,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "5": {
+    "iterations_informadas": 26,
+    "L": 2857,
+    "H": 114,
+    "linhas_executadas": 192
+   },
+   "6": {
+    "iterations_informadas": 26,
+    "L": 2859,
+    "H": 114,
+    "linhas_executadas": 192
+   },
+   "7": {
+    "iterations_informadas": 26,
+    "L": 2853,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "8": {
+    "iterations_informadas": 26,
+    "L": 2855,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "9": {
+    "iterations_informadas": 26,
+    "L": 2857,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "10": {
+    "iterations_informadas": 26,
+    "L": 2866,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "11": {
+    "iterations_informadas": 26,
+    "L": 2868,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "12": {
+    "iterations_informadas": 26,
+    "L": 2870,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "13": {
+    "iterations_informadas": 26,
+    "L": 2872,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "14": {
+    "iterations_informadas": 26,
+    "L": 2874,
+    "H": 114,
+    "linhas_executadas": 184
+   },
+   "15": {
+    "iterations_informadas": 26,
+    "L": 2884,
+    "H": 114,
+    "linhas_executadas": 192
+   },
+   "16": {
+    "iterations_informadas": 26,
+    "L": 2886,
+    "H": 114,
+    "linhas_executadas": 192
+   },
+   "17": {
+    "iterations_informadas": 26,
+    "L": 2888,
+    "H": 114,
+    "linhas_executadas": 192
+   },
+   "18": {
+    "iterations_informadas": 26,
+    "L": 2882,
+    "H": 114,
+    "linhas_executadas": 184
+   }
+  },
+  "chatgpt/euler": {
+   "1": null,
+   "2": null,
+   "3": null,
+   "4": null,
+   "5": null,
+   "6": null,
+   "7": null,
+   "8": null,
+   "9": null,
+   "10": null,
+   "11": null,
+   "12": null,
+   "13": null,
+   "14": null,
+   "15": null,
+   "16": null,
+   "17": null,
+   "18": null
+  },
+  "claude/chudnovsky": {
+   "1": {
+    "iterations_informadas": 4,
+    "L": 75782,
+    "H": 10517,
+    "linhas_executadas": 146
+   },
+   "2": {
+    "iterations_informadas": 4,
+    "L": 75783,
+    "H": 10517,
+    "linhas_executadas": 146
+   },
+   "3": {
+    "iterations_informadas": 4,
+    "L": 75792,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "4": {
+    "iterations_informadas": 4,
+    "L": 75793,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "5": {
+    "iterations_informadas": 4,
+    "L": 75786,
+    "H": 10517,
+    "linhas_executadas": 146
+   },
+   "6": {
+    "iterations_informadas": 4,
+    "L": 75795,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "7": {
+    "iterations_informadas": 4,
+    "L": 75796,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "8": {
+    "iterations_informadas": 4,
+    "L": 75789,
+    "H": 10517,
+    "linhas_executadas": 146
+   },
+   "9": {
+    "iterations_informadas": 4,
+    "L": 75798,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "10": {
+    "iterations_informadas": 4,
+    "L": 75799,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "11": {
+    "iterations_informadas": 4,
+    "L": 75800,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "12": {
+    "iterations_informadas": 4,
+    "L": 75804,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "13": {
+    "iterations_informadas": 4,
+    "L": 75802,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "14": {
+    "iterations_informadas": 4,
+    "L": 75795,
+    "H": 10517,
+    "linhas_executadas": 146
+   },
+   "15": {
+    "iterations_informadas": 4,
+    "L": 75796,
+    "H": 10517,
+    "linhas_executadas": 146
+   },
+   "16": {
+    "iterations_informadas": 4,
+    "L": 75797,
+    "H": 10517,
+    "linhas_executadas": 146
+   },
+   "17": {
+    "iterations_informadas": 4,
+    "L": 75806,
+    "H": 10517,
+    "linhas_executadas": 153
+   },
+   "18": {
+    "iterations_informadas": 4,
+    "L": 75799,
+    "H": 10517,
+    "linhas_executadas": 146
+   }
+  },
+  "claude/ramanujan": {
+   "1": {
+    "iterations_informadas": 6,
+    "L": 78213,
+    "H": 10569,
+    "linhas_executadas": 143
+   },
+   "2": {
+    "iterations_informadas": 6,
+    "L": 78214,
+    "H": 10569,
+    "linhas_executadas": 143
+   },
+   "3": {
+    "iterations_informadas": 6,
+    "L": 78223,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "4": {
+    "iterations_informadas": 6,
+    "L": 78224,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "5": {
+    "iterations_informadas": 6,
+    "L": 78217,
+    "H": 10569,
+    "linhas_executadas": 143
+   },
+   "6": {
+    "iterations_informadas": 6,
+    "L": 78226,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "7": {
+    "iterations_informadas": 6,
+    "L": 78227,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "8": {
+    "iterations_informadas": 6,
+    "L": 78220,
+    "H": 10569,
+    "linhas_executadas": 143
+   },
+   "9": {
+    "iterations_informadas": 6,
+    "L": 78229,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "10": {
+    "iterations_informadas": 6,
+    "L": 78230,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "11": {
+    "iterations_informadas": 6,
+    "L": 78231,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "12": {
+    "iterations_informadas": 6,
+    "L": 78235,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "13": {
+    "iterations_informadas": 6,
+    "L": 78233,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "14": {
+    "iterations_informadas": 6,
+    "L": 78226,
+    "H": 10569,
+    "linhas_executadas": 143
+   },
+   "15": {
+    "iterations_informadas": 6,
+    "L": 78227,
+    "H": 10569,
+    "linhas_executadas": 143
+   },
+   "16": {
+    "iterations_informadas": 6,
+    "L": 78228,
+    "H": 10569,
+    "linhas_executadas": 143
+   },
+   "17": {
+    "iterations_informadas": 6,
+    "L": 78237,
+    "H": 10569,
+    "linhas_executadas": 150
+   },
+   "18": {
+    "iterations_informadas": 6,
+    "L": 78230,
+    "H": 10569,
+    "linhas_executadas": 143
+   }
+  },
+  "claude/takano": {
+   "1": {
+    "iterations_informadas": 39,
+    "L": 9724,
+    "H": 1573,
+    "linhas_executadas": 98
+   },
+   "2": {
+    "iterations_informadas": 39,
+    "L": 9725,
+    "H": 1573,
+    "linhas_executadas": 98
+   },
+   "3": {
+    "iterations_informadas": 39,
+    "L": 9734,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "4": {
+    "iterations_informadas": 39,
+    "L": 9735,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "5": {
+    "iterations_informadas": 39,
+    "L": 9728,
+    "H": 1573,
+    "linhas_executadas": 98
+   },
+   "6": {
+    "iterations_informadas": 39,
+    "L": 9737,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "7": {
+    "iterations_informadas": 39,
+    "L": 9738,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "8": {
+    "iterations_informadas": 39,
+    "L": 9731,
+    "H": 1573,
+    "linhas_executadas": 98
+   },
+   "9": {
+    "iterations_informadas": 39,
+    "L": 9740,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "10": {
+    "iterations_informadas": 39,
+    "L": 9741,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "11": {
+    "iterations_informadas": 39,
+    "L": 9742,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "12": {
+    "iterations_informadas": 39,
+    "L": 9746,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "13": {
+    "iterations_informadas": 39,
+    "L": 9744,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "14": {
+    "iterations_informadas": 39,
+    "L": 9737,
+    "H": 1573,
+    "linhas_executadas": 98
+   },
+   "15": {
+    "iterations_informadas": 39,
+    "L": 9738,
+    "H": 1573,
+    "linhas_executadas": 98
+   },
+   "16": {
+    "iterations_informadas": 39,
+    "L": 9739,
+    "H": 1573,
+    "linhas_executadas": 98
+   },
+   "17": {
+    "iterations_informadas": 39,
+    "L": 9748,
+    "H": 1573,
+    "linhas_executadas": 105
+   },
+   "18": {
+    "iterations_informadas": 39,
+    "L": 9741,
+    "H": 1573,
+    "linhas_executadas": 98
+   }
+  },
+  "claude/machin": {
+   "1": {
+    "iterations_informadas": 41,
+    "L": 9733,
+    "H": 1625,
+    "linhas_executadas": 97
+   },
+   "2": {
+    "iterations_informadas": 41,
+    "L": 9734,
+    "H": 1625,
+    "linhas_executadas": 97
+   },
+   "3": {
+    "iterations_informadas": 41,
+    "L": 9743,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "4": {
+    "iterations_informadas": 41,
+    "L": 9744,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "5": {
+    "iterations_informadas": 41,
+    "L": 9737,
+    "H": 1625,
+    "linhas_executadas": 97
+   },
+   "6": {
+    "iterations_informadas": 41,
+    "L": 9746,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "7": {
+    "iterations_informadas": 41,
+    "L": 9747,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "8": {
+    "iterations_informadas": 41,
+    "L": 9740,
+    "H": 1625,
+    "linhas_executadas": 97
+   },
+   "9": {
+    "iterations_informadas": 41,
+    "L": 9749,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "10": {
+    "iterations_informadas": 41,
+    "L": 9750,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "11": {
+    "iterations_informadas": 41,
+    "L": 9751,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "12": {
+    "iterations_informadas": 41,
+    "L": 9755,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "13": {
+    "iterations_informadas": 41,
+    "L": 9753,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "14": {
+    "iterations_informadas": 41,
+    "L": 9746,
+    "H": 1625,
+    "linhas_executadas": 97
+   },
+   "15": {
+    "iterations_informadas": 41,
+    "L": 9747,
+    "H": 1625,
+    "linhas_executadas": 97
+   },
+   "16": {
+    "iterations_informadas": 41,
+    "L": 9748,
+    "H": 1625,
+    "linhas_executadas": 97
+   },
+   "17": {
+    "iterations_informadas": 41,
+    "L": 9757,
+    "H": 1625,
+    "linhas_executadas": 104
+   },
+   "18": {
+    "iterations_informadas": 41,
+    "L": 9750,
+    "H": 1625,
+    "linhas_executadas": 97
+   }
+  },
+  "claude/euler": {
+   "1": {
+    "iterations_informadas": 145,
+    "L": 24518,
+    "H": 1898,
+    "linhas_executadas": 85
+   },
+   "2": {
+    "iterations_informadas": 145,
+    "L": 24519,
+    "H": 1898,
+    "linhas_executadas": 85
+   },
+   "3": {
+    "iterations_informadas": 145,
+    "L": 24528,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "4": {
+    "iterations_informadas": 145,
+    "L": 24529,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "5": {
+    "iterations_informadas": 145,
+    "L": 24522,
+    "H": 1898,
+    "linhas_executadas": 85
+   },
+   "6": {
+    "iterations_informadas": 145,
+    "L": 24531,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "7": {
+    "iterations_informadas": 145,
+    "L": 24532,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "8": {
+    "iterations_informadas": 145,
+    "L": 24525,
+    "H": 1898,
+    "linhas_executadas": 85
+   },
+   "9": {
+    "iterations_informadas": 145,
+    "L": 24534,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "10": {
+    "iterations_informadas": 145,
+    "L": 24535,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "11": {
+    "iterations_informadas": 145,
+    "L": 24536,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "12": {
+    "iterations_informadas": 145,
+    "L": 24540,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "13": {
+    "iterations_informadas": 145,
+    "L": 24538,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "14": {
+    "iterations_informadas": 145,
+    "L": 24531,
+    "H": 1898,
+    "linhas_executadas": 85
+   },
+   "15": {
+    "iterations_informadas": 145,
+    "L": 24532,
+    "H": 1898,
+    "linhas_executadas": 85
+   },
+   "16": {
+    "iterations_informadas": 145,
+    "L": 24533,
+    "H": 1898,
+    "linhas_executadas": 85
+   },
+   "17": {
+    "iterations_informadas": 145,
+    "L": 24542,
+    "H": 1898,
+    "linhas_executadas": 92
+   },
+   "18": {
+    "iterations_informadas": 145,
+    "L": 24535,
+    "H": 1898,
+    "linhas_executadas": 85
+   }
+  },
+  "gemini/machin": {
+   "1": {
+    "iterations_informadas": 3,
+    "L": 630,
+    "H": 70,
+    "linhas_executadas": 114
+   },
+   "2": {
+    "iterations_informadas": 4,
+    "L": 738,
+    "H": 84,
+    "linhas_executadas": 114
+   },
+   "3": {
+    "iterations_informadas": 5,
+    "L": 856,
+    "H": 98,
+    "linhas_executadas": 122
+   },
+   "4": {
+    "iterations_informadas": 5,
+    "L": 854,
+    "H": 98,
+    "linhas_executadas": 122
+   },
+   "5": {
+    "iterations_informadas": 6,
+    "L": 1051,
+    "H": 126,
+    "linhas_executadas": 115
+   },
+   "6": {
+    "iterations_informadas": 7,
+    "L": 1172,
+    "H": 140,
+    "linhas_executadas": 122
+   },
+   "7": {
+    "iterations_informadas": 7,
+    "L": 1191,
+    "H": 140,
+    "linhas_executadas": 123
+   },
+   "8": {
+    "iterations_informadas": 8,
+    "L": 1286,
+    "H": 154,
+    "linhas_executadas": 115
+   },
+   "9": {
+    "iterations_informadas": 9,
+    "L": 1405,
+    "H": 168,
+    "linhas_executadas": 123
+   },
+   "10": {
+    "iterations_informadas": 9,
+    "L": 1503,
+    "H": 182,
+    "linhas_executadas": 123
+   },
+   "11": {
+    "iterations_informadas": 10,
+    "L": 1606,
+    "H": 196,
+    "linhas_executadas": 123
+   },
+   "12": {
+    "iterations_informadas": 11,
+    "L": 1721,
+    "H": 210,
+    "linhas_executadas": 125
+   },
+   "13": {
+    "iterations_informadas": 11,
+    "L": 1714,
+    "H": 210,
+    "linhas_executadas": 123
+   },
+   "14": {
+    "iterations_informadas": 12,
+    "L": 1810,
+    "H": 224,
+    "linhas_executadas": 115
+   },
+   "15": {
+    "iterations_informadas": 13,
+    "L": 2028,
+    "H": 252,
+    "linhas_executadas": 114
+   },
+   "16": {
+    "iterations_informadas": 14,
+    "L": 2162,
+    "H": 266,
+    "linhas_executadas": 115
+   },
+   "17": {
+    "iterations_informadas": 14,
+    "L": 2168,
+    "H": 266,
+    "linhas_executadas": 123
+   },
+   "18": {
+    "iterations_informadas": 15,
+    "L": 2276,
+    "H": 280,
+    "linhas_executadas": 115
+   }
+  },
+  "gemini/euler": {
+   "1": {
+    "iterations_informadas": 12,
+    "L": 1255,
+    "H": 91,
+    "linhas_executadas": 89
+   },
+   "2": {
+    "iterations_informadas": 15,
+    "L": 1550,
+    "H": 112,
+    "linhas_executadas": 89
+   },
+   "3": {
+    "iterations_informadas": 18,
+    "L": 1853,
+    "H": 133,
+    "linhas_executadas": 97
+   },
+   "4": {
+    "iterations_informadas": 21,
+    "L": 2148,
+    "H": 154,
+    "linhas_executadas": 97
+   },
+   "5": {
+    "iterations_informadas": 25,
+    "L": 2537,
+    "H": 182,
+    "linhas_executadas": 89
+   },
+   "6": {
+    "iterations_informadas": 28,
+    "L": 2840,
+    "H": 203,
+    "linhas_executadas": 96
+   },
+   "7": {
+    "iterations_informadas": 31,
+    "L": 3162,
+    "H": 224,
+    "linhas_executadas": 97
+   },
+   "8": {
+    "iterations_informadas": 34,
+    "L": 3458,
+    "H": 245,
+    "linhas_executadas": 89
+   },
+   "9": {
+    "iterations_informadas": 38,
+    "L": 3872,
+    "H": 273,
+    "linhas_executadas": 97
+   },
+   "10": {
+    "iterations_informadas": 41,
+    "L": 4176,
+    "H": 294,
+    "linhas_executadas": 97
+   },
+   "11": {
+    "iterations_informadas": 44,
+    "L": 4480,
+    "H": 315,
+    "linhas_executadas": 97
+   },
+   "12": {
+    "iterations_informadas": 47,
+    "L": 4789,
+    "H": 336,
+    "linhas_executadas": 99
+   },
+   "13": {
+    "iterations_informadas": 51,
+    "L": 5190,
+    "H": 364,
+    "linhas_executadas": 97
+   },
+   "14": {
+    "iterations_informadas": 54,
+    "L": 5486,
+    "H": 385,
+    "linhas_executadas": 89
+   },
+   "15": {
+    "iterations_informadas": 57,
+    "L": 5793,
+    "H": 406,
+    "linhas_executadas": 88
+   },
+   "16": {
+    "iterations_informadas": 60,
+    "L": 6124,
+    "H": 427,
+    "linhas_executadas": 89
+   },
+   "17": {
+    "iterations_informadas": 64,
+    "L": 6550,
+    "H": 455,
+    "linhas_executadas": 97
+   },
+   "18": {
+    "iterations_informadas": 67,
+    "L": 6855,
+    "H": 476,
+    "linhas_executadas": 89
+   }
+  },
+  "gemini/newton": {
+   "1": {
+    "iterations_informadas": 5,
+    "L": 716,
+    "H": 70,
+    "linhas_executadas": 91
+   },
+   "2": {
+    "iterations_informadas": 6,
+    "L": 842,
+    "H": 84,
+    "linhas_executadas": 91
+   },
+   "3": {
+    "iterations_informadas": 7,
+    "L": 976,
+    "H": 98,
+    "linhas_executadas": 99
+   },
+   "4": {
+    "iterations_informadas": 9,
+    "L": 1234,
+    "H": 126,
+    "linhas_executadas": 99
+   },
+   "5": {
+    "iterations_informadas": 10,
+    "L": 1352,
+    "H": 140,
+    "linhas_executadas": 91
+   },
+   "6": {
+    "iterations_informadas": 12,
+    "L": 1617,
+    "H": 168,
+    "linhas_executadas": 98
+   },
+   "7": {
+    "iterations_informadas": 13,
+    "L": 1764,
+    "H": 182,
+    "linhas_executadas": 99
+   },
+   "8": {
+    "iterations_informadas": 15,
+    "L": 2016,
+    "H": 210,
+    "linhas_executadas": 91
+   },
+   "9": {
+    "iterations_informadas": 16,
+    "L": 2153,
+    "H": 224,
+    "linhas_executadas": 99
+   },
+   "10": {
+    "iterations_informadas": 18,
+    "L": 2413,
+    "H": 252,
+    "linhas_executadas": 99
+   },
+   "11": {
+    "iterations_informadas": 20,
+    "L": 2673,
+    "H": 280,
+    "linhas_executadas": 99
+   },
+   "12": {
+    "iterations_informadas": 21,
+    "L": 2807,
+    "H": 294,
+    "linhas_executadas": 101
+   },
+   "13": {
+    "iterations_informadas": 23,
+    "L": 3062,
+    "H": 322,
+    "linhas_executadas": 99
+   },
+   "14": {
+    "iterations_informadas": 24,
+    "L": 3183,
+    "H": 336,
+    "linhas_executadas": 91
+   },
+   "15": {
+    "iterations_informadas": 26,
+    "L": 3446,
+    "H": 364,
+    "linhas_executadas": 90
+   },
+   "16": {
+    "iterations_informadas": 28,
+    "L": 3730,
+    "H": 392,
+    "linhas_executadas": 91
+   },
+   "17": {
+    "iterations_informadas": 29,
+    "L": 3870,
+    "H": 406,
+    "linhas_executadas": 99
+   },
+   "18": {
+    "iterations_informadas": 31,
+    "L": 4128,
+    "H": 434,
+    "linhas_executadas": 91
+   }
+  },
+  "gemini/nilakantha": {
+   "1": {
+    "iterations_informadas": 17,
+    "L": 2379,
+    "H": 357,
+    "linhas_executadas": 97
+   },
+   "2": {
+    "iterations_informadas": 37,
+    "L": 5135,
+    "H": 777,
+    "linhas_executadas": 97
+   },
+   "3": {
+    "iterations_informadas": 79,
+    "L": 10928,
+    "H": 1659,
+    "linhas_executadas": 105
+   },
+   "4": {
+    "iterations_informadas": 171,
+    "L": 23625,
+    "H": 3591,
+    "linhas_executadas": 105
+   },
+   "5": {
+    "iterations_informadas": 368,
+    "L": 50806,
+    "H": 7728,
+    "linhas_executadas": 97
+   },
+   "6": {
+    "iterations_informadas": 794,
+    "L": 110077,
+    "H": 16674,
+    "linhas_executadas": 104
+   },
+   "7": {
+    "iterations_informadas": 1710,
+    "L": 238544,
+    "H": 35910,
+    "linhas_executadas": 105
+   },
+   "8": {
+    "iterations_informadas": 3684,
+    "L": 516383,
+    "H": 77364,
+    "linhas_executadas": 97
+   },
+   "9": {
+    "iterations_informadas": 7937,
+    "L": 1114966,
+    "H": 166677,
+    "linhas_executadas": 105
+   },
+   "10": {
+    "iterations_informadas": 17100,
+    "L": 2404667,
+    "H": 359100,
+    "linhas_executadas": 105
+   },
+   "11": {
+    "iterations_informadas": 36840,
+    "L": 5183181,
+    "H": 773640,
+    "linhas_executadas": 105
+   },
+   "12": {
+    "iterations_informadas": 79370,
+    "L": 11169294,
+    "H": 1666770,
+    "linhas_executadas": 107
+   },
+   "13": {
+    "iterations_informadas": 170998,
+    "L": 24067519,
+    "H": 3590958,
+    "linhas_executadas": 105
+   },
+   "14": {
+    "iterations_informadas": 368403,
+    "L": 51883571,
+    "H": 7736463,
+    "linhas_executadas": 97
+   },
+   "15": {
+    "iterations_informadas": 793701,
+    "L": 112221952,
+    "H": 16667721,
+    "linhas_executadas": 96
+   },
+   "16": {
+    "iterations_informadas": 1709976,
+    "L": 243226740,
+    "H": 35909496,
+    "linhas_executadas": 97
+   },
+   "17": {
+    "iterations_informadas": 3684031,
+    "L": 526503135,
+    "H": 77364651,
+    "linhas_executadas": 105
+   },
+   "18": {
+    "iterations_informadas": 7937005,
+    "L": 1136804864,
+    "H": 166677105,
+    "linhas_executadas": 97
+   }
+  },
+  "gemini/ramanujan": {
+   "1": {
+    "iterations_informadas": 1,
+    "L": 8149,
+    "H": 1722,
+    "linhas_executadas": 169
+   },
+   "2": {
+    "iterations_informadas": 2,
+    "L": 8401,
+    "H": 1722,
+    "linhas_executadas": 175
+   },
+   "3": {
+    "iterations_informadas": 2,
+    "L": 8407,
+    "H": 1722,
+    "linhas_executadas": 183
+   },
+   "4": {
+    "iterations_informadas": 2,
+    "L": 8405,
+    "H": 1722,
+    "linhas_executadas": 183
+   },
+   "5": {
+    "iterations_informadas": 2,
+    "L": 8395,
+    "H": 1722,
+    "linhas_executadas": 175
+   },
+   "6": {
+    "iterations_informadas": 2,
+    "L": 8401,
+    "H": 1722,
+    "linhas_executadas": 182
+   },
+   "7": {
+    "iterations_informadas": 2,
+    "L": 8420,
+    "H": 1722,
+    "linhas_executadas": 183
+   },
+   "8": {
+    "iterations_informadas": 2,
+    "L": 8410,
+    "H": 1722,
+    "linhas_executadas": 175
+   },
+   "9": {
+    "iterations_informadas": 2,
+    "L": 8416,
+    "H": 1722,
+    "linhas_executadas": 183
+   },
+   "10": {
+    "iterations_informadas": 3,
+    "L": 8663,
+    "H": 1722,
+    "linhas_executadas": 183
+   },
+   "11": {
+    "iterations_informadas": 3,
+    "L": 8661,
+    "H": 1722,
+    "linhas_executadas": 183
+   },
+   "12": {
+    "iterations_informadas": 3,
+    "L": 8664,
+    "H": 1722,
+    "linhas_executadas": 185
+   },
+   "13": {
+    "iterations_informadas": 3,
+    "L": 8657,
+    "H": 1722,
+    "linhas_executadas": 183
+   },
+   "14": {
+    "iterations_informadas": 3,
+    "L": 8647,
+    "H": 1722,
+    "linhas_executadas": 175
+   },
+   "15": {
+    "iterations_informadas": 3,
+    "L": 8645,
+    "H": 1722,
+    "linhas_executadas": 174
+   },
+   "16": {
+    "iterations_informadas": 3,
+    "L": 8664,
+    "H": 1722,
+    "linhas_executadas": 175
+   },
+   "17": {
+    "iterations_informadas": 3,
+    "L": 8670,
+    "H": 1722,
+    "linhas_executadas": 183
+   },
+   "18": {
+    "iterations_informadas": 4,
+    "L": 8912,
+    "H": 1722,
+    "linhas_executadas": 175
+   }
+  },
+  "grok/nilakantha": {
+   "1": {
+    "iterations_informadas": 793,
+    "L": 50686,
+    "H": 2405,
+    "linhas_executadas": 138
+   },
+   "2": {
+    "iterations_informadas": 812,
+    "L": 51932,
+    "H": 2462,
+    "linhas_executadas": 138
+   },
+   "3": {
+    "iterations_informadas": 812,
+    "L": 52014,
+    "H": 2465,
+    "linhas_executadas": 141
+   },
+   "4": {
+    "iterations_informadas": 812,
+    "L": 52094,
+    "H": 2468,
+    "linhas_executadas": 141
+   },
+   "5": {
+    "iterations_informadas": 812,
+    "L": 52174,
+    "H": 2471,
+    "linhas_executadas": 140
+   },
+   "6": {
+    "iterations_informadas": 812,
+    "L": 52239,
+    "H": 2474,
+    "linhas_executadas": 141
+   },
+   "7": {
+    "iterations_informadas": 812,
+    "L": 52294,
+    "H": 2477,
+    "linhas_executadas": 141
+   },
+   "8": {
+    "iterations_informadas": 812,
+    "L": 52303,
+    "H": 2480,
+    "linhas_executadas": 140
+   },
+   "9": {
+    "iterations_informadas": 812,
+    "L": 52252,
+    "H": 2483,
+    "linhas_executadas": 140
+   },
+   "10": {
+    "iterations_informadas": 812,
+    "L": 61772,
+    "H": 3299,
+    "linhas_executadas": 140
+   },
+   "11": {
+    "iterations_informadas": 812,
+    "L": 61832,
+    "H": 3303,
+    "linhas_executadas": 140
+   },
+   "12": {
+    "iterations_informadas": 812,
+    "L": 61921,
+    "H": 3307,
+    "linhas_executadas": 141
+   },
+   "13": {
+    "iterations_informadas": 812,
+    "L": 62040,
+    "H": 3311,
+    "linhas_executadas": 141
+   },
+   "14": {
+    "iterations_informadas": 812,
+    "L": 62120,
+    "H": 3315,
+    "linhas_executadas": 140
+   },
+   "15": {
+    "iterations_informadas": 812,
+    "L": 62216,
+    "H": 3319,
+    "linhas_executadas": 140
+   },
+   "16": {
+    "iterations_informadas": 812,
+    "L": 62286,
+    "H": 3323,
+    "linhas_executadas": 140
+   },
+   "17": {
+    "iterations_informadas": 812,
+    "L": 62312,
+    "H": 3327,
+    "linhas_executadas": 140
+   },
+   "18": {
+    "iterations_informadas": 812,
+    "L": 62273,
+    "H": 3331,
+    "linhas_executadas": 141
+   }
+  },
+  "grok/machin": {
+   "1": {
+    "iterations_informadas": 8,
+    "L": 1450,
+    "H": 69,
+    "linhas_executadas": 146
+   },
+   "2": {
+    "iterations_informadas": 8,
+    "L": 1593,
+    "H": 72,
+    "linhas_executadas": 148
+   },
+   "3": {
+    "iterations_informadas": 9,
+    "L": 1770,
+    "H": 79,
+    "linhas_executadas": 149
+   },
+   "4": {
+    "iterations_informadas": 10,
+    "L": 1977,
+    "H": 86,
+    "linhas_executadas": 149
+   },
+   "5": {
+    "iterations_informadas": 11,
+    "L": 2160,
+    "H": 94,
+    "linhas_executadas": 148
+   },
+   "6": {
+    "iterations_informadas": 12,
+    "L": 2347,
+    "H": 103,
+    "linhas_executadas": 149
+   },
+   "7": {
+    "iterations_informadas": 13,
+    "L": 2522,
+    "H": 111,
+    "linhas_executadas": 149
+   },
+   "8": {
+    "iterations_informadas": 13,
+    "L": 2615,
+    "H": 118,
+    "linhas_executadas": 148
+   },
+   "9": {
+    "iterations_informadas": 14,
+    "L": 2817,
+    "H": 128,
+    "linhas_executadas": 149
+   },
+   "10": {
+    "iterations_informadas": 16,
+    "L": 3114,
+    "H": 141,
+    "linhas_executadas": 149
+   },
+   "11": {
+    "iterations_informadas": 17,
+    "L": 3423,
+    "H": 154,
+    "linhas_executadas": 149
+   },
+   "12": {
+    "iterations_informadas": 17,
+    "L": 3539,
+    "H": 163,
+    "linhas_executadas": 149
+   },
+   "13": {
+    "iterations_informadas": 18,
+    "L": 3809,
+    "H": 177,
+    "linhas_executadas": 149
+   },
+   "14": {
+    "iterations_informadas": 19,
+    "L": 4017,
+    "H": 188,
+    "linhas_executadas": 148
+   },
+   "15": {
+    "iterations_informadas": 20,
+    "L": 4243,
+    "H": 200,
+    "linhas_executadas": 148
+   },
+   "16": {
+    "iterations_informadas": 21,
+    "L": 4454,
+    "H": 211,
+    "linhas_executadas": 148
+   },
+   "17": {
+    "iterations_informadas": 22,
+    "L": 4662,
+    "H": 222,
+    "linhas_executadas": 149
+   },
+   "18": {
+    "iterations_informadas": 22,
+    "L": 4814,
+    "H": 234,
+    "linhas_executadas": 148
+   }
+  },
+  "grok/gauss": {
+   "1": {
+    "iterations_informadas": 7,
+    "L": 1623,
+    "H": 80,
+    "linhas_executadas": 151
+   },
+   "2": {
+    "iterations_informadas": 9,
+    "L": 1922,
+    "H": 95,
+    "linhas_executadas": 153
+   },
+   "3": {
+    "iterations_informadas": 9,
+    "L": 2093,
+    "H": 107,
+    "linhas_executadas": 152
+   },
+   "4": {
+    "iterations_informadas": 9,
+    "L": 2225,
+    "H": 117,
+    "linhas_executadas": 154
+   },
+   "5": {
+    "iterations_informadas": 11,
+    "L": 2522,
+    "H": 131,
+    "linhas_executadas": 153
+   },
+   "6": {
+    "iterations_informadas": 12,
+    "L": 2721,
+    "H": 142,
+    "linhas_executadas": 154
+   },
+   "7": {
+    "iterations_informadas": 13,
+    "L": 2930,
+    "H": 154,
+    "linhas_executadas": 152
+   },
+   "8": {
+    "iterations_informadas": 13,
+    "L": 3049,
+    "H": 164,
+    "linhas_executadas": 153
+   },
+   "9": {
+    "iterations_informadas": 14,
+    "L": 3263,
+    "H": 176,
+    "linhas_executadas": 154
+   },
+   "10": {
+    "iterations_informadas": 16,
+    "L": 3614,
+    "H": 195,
+    "linhas_executadas": 154
+   },
+   "11": {
+    "iterations_informadas": 16,
+    "L": 3774,
+    "H": 209,
+    "linhas_executadas": 154
+   },
+   "12": {
+    "iterations_informadas": 16,
+    "L": 4000,
+    "H": 224,
+    "linhas_executadas": 152
+   },
+   "13": {
+    "iterations_informadas": 18,
+    "L": 4385,
+    "H": 243,
+    "linhas_executadas": 154
+   },
+   "14": {
+    "iterations_informadas": 18,
+    "L": 4544,
+    "H": 257,
+    "linhas_executadas": 153
+   },
+   "15": {
+    "iterations_informadas": 20,
+    "L": 4882,
+    "H": 274,
+    "linhas_executadas": 153
+   },
+   "16": {
+    "iterations_informadas": 21,
+    "L": 5121,
+    "H": 289,
+    "linhas_executadas": 153
+   },
+   "17": {
+    "iterations_informadas": 21,
+    "L": 5276,
+    "H": 303,
+    "linhas_executadas": 154
+   },
+   "18": {
+    "iterations_informadas": 22,
+    "L": 5541,
+    "H": 320,
+    "linhas_executadas": 153
+   }
+  },
+  "grok/hutton": {
+   "1": {
+    "iterations_informadas": 13,
+    "L": 1871,
+    "H": 89,
+    "linhas_executadas": 148
+   },
+   "2": {
+    "iterations_informadas": 14,
+    "L": 2157,
+    "H": 96,
+    "linhas_executadas": 148
+   },
+   "3": {
+    "iterations_informadas": 16,
+    "L": 2434,
+    "H": 107,
+    "linhas_executadas": 149
+   },
+   "4": {
+    "iterations_informadas": 17,
+    "L": 2634,
+    "H": 114,
+    "linhas_executadas": 151
+   },
+   "5": {
+    "iterations_informadas": 19,
+    "L": 2913,
+    "H": 128,
+    "linhas_executadas": 150
+   },
+   "6": {
+    "iterations_informadas": 21,
+    "L": 3199,
+    "H": 142,
+    "linhas_executadas": 151
+   },
+   "7": {
+    "iterations_informadas": 22,
+    "L": 3401,
+    "H": 153,
+    "linhas_executadas": 151
+   },
+   "8": {
+    "iterations_informadas": 24,
+    "L": 3678,
+    "H": 167,
+    "linhas_executadas": 150
+   },
+   "9": {
+    "iterations_informadas": 25,
+    "L": 3876,
+    "H": 177,
+    "linhas_executadas": 151
+   },
+   "10": {
+    "iterations_informadas": 27,
+    "L": 4188,
+    "H": 194,
+    "linhas_executadas": 151
+   },
+   "11": {
+    "iterations_informadas": 28,
+    "L": 4623,
+    "H": 208,
+    "linhas_executadas": 151
+   },
+   "12": {
+    "iterations_informadas": 30,
+    "L": 4965,
+    "H": 227,
+    "linhas_executadas": 151
+   },
+   "13": {
+    "iterations_informadas": 32,
+    "L": 5303,
+    "H": 244,
+    "linhas_executadas": 151
+   },
+   "14": {
+    "iterations_informadas": 33,
+    "L": 5543,
+    "H": 259,
+    "linhas_executadas": 150
+   },
+   "15": {
+    "iterations_informadas": 35,
+    "L": 5874,
+    "H": 277,
+    "linhas_executadas": 150
+   },
+   "16": {
+    "iterations_informadas": 36,
+    "L": 6127,
+    "H": 292,
+    "linhas_executadas": 150
+   },
+   "17": {
+    "iterations_informadas": 38,
+    "L": 6452,
+    "H": 310,
+    "linhas_executadas": 151
+   },
+   "18": {
+    "iterations_informadas": 40,
+    "L": 6792,
+    "H": 328,
+    "linhas_executadas": 150
+   }
+  },
+  "grok/twinarctan": {
+   "1": {
+    "iterations_informadas": 21,
+    "L": 2521,
+    "H": 120,
+    "linhas_executadas": 148
+   },
+   "2": {
+    "iterations_informadas": 23,
+    "L": 2965,
+    "H": 131,
+    "linhas_executadas": 150
+   },
+   "3": {
+    "iterations_informadas": 26,
+    "L": 3342,
+    "H": 147,
+    "linhas_executadas": 151
+   },
+   "4": {
+    "iterations_informadas": 28,
+    "L": 3644,
+    "H": 163,
+    "linhas_executadas": 151
+   },
+   "5": {
+    "iterations_informadas": 31,
+    "L": 4039,
+    "H": 184,
+    "linhas_executadas": 150
+   },
+   "6": {
+    "iterations_informadas": 33,
+    "L": 4332,
+    "H": 199,
+    "linhas_executadas": 151
+   },
+   "7": {
+    "iterations_informadas": 36,
+    "L": 4725,
+    "H": 220,
+    "linhas_executadas": 151
+   },
+   "8": {
+    "iterations_informadas": 39,
+    "L": 5114,
+    "H": 240,
+    "linhas_executadas": 150
+   },
+   "9": {
+    "iterations_informadas": 41,
+    "L": 5409,
+    "H": 256,
+    "linhas_executadas": 151
+   },
+   "10": {
+    "iterations_informadas": 44,
+    "L": 5837,
+    "H": 280,
+    "linhas_executadas": 151
+   },
+   "11": {
+    "iterations_informadas": 46,
+    "L": 6513,
+    "H": 302,
+    "linhas_executadas": 151
+   },
+   "12": {
+    "iterations_informadas": 49,
+    "L": 6968,
+    "H": 327,
+    "linhas_executadas": 151
+   },
+   "13": {
+    "iterations_informadas": 52,
+    "L": 7437,
+    "H": 353,
+    "linhas_executadas": 151
+   },
+   "14": {
+    "iterations_informadas": 54,
+    "L": 7815,
+    "H": 377,
+    "linhas_executadas": 150
+   },
+   "15": {
+    "iterations_informadas": 57,
+    "L": 8266,
+    "H": 402,
+    "linhas_executadas": 150
+   },
+   "16": {
+    "iterations_informadas": 60,
+    "L": 8736,
+    "H": 429,
+    "linhas_executadas": 150
+   },
+   "17": {
+    "iterations_informadas": 62,
+    "L": 9107,
+    "H": 452,
+    "linhas_executadas": 151
+   },
+   "18": {
+    "iterations_informadas": 65,
+    "L": 9560,
+    "H": 477,
+    "linhas_executadas": 150
+   }
+  }
+ }
+}

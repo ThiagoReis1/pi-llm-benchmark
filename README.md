@@ -248,3 +248,14 @@ python tools/medir_complementar.py . results/complementar/medicao_complementar.j
 ```
 
 Requer `gcc` e as dependências de `requirements.txt`.
+
+## Validação independente do custo (QP4)
+
+Duas ferramentas complementares, que não alteram `results/results.json`:
+
+```bash
+python tools/qp4_medicao_independente.py .   # recompila com -O0 --coverage e mede execução de linhas (gcov) para d=1..18
+python tools/qp4_analise.py . [DIR_ARTIGO]   # seleção de modelo (BIC), comparação com a teoria e concordância com a análise estática
+```
+
+Saídas: `results/complementar/qp4_gcov.json` (medição) e `results/complementar/qp4_analise.json` (análise). Com `DIR_ARTIGO`, gera também a tabela, as macros e a figura do artigo. Requer `numpy`, `scipy` e `matplotlib` além do `requirements.txt`.
