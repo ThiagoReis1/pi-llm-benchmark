@@ -32,9 +32,17 @@ pi-llm-benchmark/
 ├── prompts/
 │   └── benchmark_prompt.txt         # Prompt oficial usado nas coletas
 ├── submissions/                    # Entradas: respostas e códigos C coletados
-├── tools/                          # Código gerador de tabelas e figuras
+├── protocolo/                      # Critérios fixados antes das medições novas
+│   └── qp4_extensoes_criterios.md
+├── tools/                          # Código gerador de tabelas e figuras e medições complementares
 │   ├── generate_presentation.py
-│   └── generate_scientific_figures.py
+│   ├── generate_scientific_figures.py
+│   ├── reparos_contrafactuais.py
+│   ├── medir_complementar.py
+│   ├── qp4_comum.py                # Definições compartilhadas da QP4
+│   ├── qp4_medicao_independente.py
+│   ├── qp4_analise.py
+│   └── qp4_extensoes.py            # Intervenção no Grok, d > 18 e instruções com -O2
 ├── results/                        # Saídas geradas e evidências da rodada
 │   ├── presentation/               # Tabelas LaTeX e figuras
 │   └── logs/                       # Evidências individuais por execução
@@ -259,3 +267,20 @@ python tools/qp4_analise.py . [DIR_ARTIGO]   # seleção de modelo (BIC), compar
 ```
 
 Saídas: `results/complementar/qp4_gcov.json` (medição) e `results/complementar/qp4_analise.json` (análise). Com `DIR_ARTIGO`, gera também a tabela, as macros e a figura do artigo. Requer `numpy`, `scipy` e `matplotlib` além do `requirements.txt`.
+
+### Extensões da QP4 (tag `v1.2`)
+
+```bash
+python tools/qp4_extensoes.py . [DIR_ARTIGO]            # E1, E2 e E3
+python tools/qp4_extensoes.py . --so=E1                  # só a intervenção no Grok
+python tools/qp4_extensoes.py . [DIR_ARTIGO] --reanalisar  # recalcula vereditos e macros sem medir de novo
+```
+
+| Experimento | O que faz |
+|---|---|
+| **E1** | Cópia do `grok/submission.c` em que todo `BigInt` tem sempre `n = 3` (e `n = 6`) limbs; confere se o resultado se preserva e se o custo por termo `H/N` deixa de crescer com `d`. |
+| **E2a** | Cópias do `claude/submission.c` sem a verificação `d <= 18`: com a escala interna original (45 casas, `d = 19..44`) e com escala ampliada (90 casas). |
+| **E2b** | Cópia do `grok/submission.c` sem a verificação `d <= 18` e com os *buffers* de saída ampliados, em `d = 19..50`. |
+| **E3** | Instruções executadas (`valgrind --tool=callgrind`) com as opções da rodada (`-O2`), `d = 1..18`, descontado um programa vazio. |
+
+Os critérios de cada experimento estão em [`protocolo/qp4_extensoes_criterios.md`](protocolo/qp4_extensoes_criterios.md), escritos antes de rodar o script. O SHA-256 desse arquivo é gravado em `results/complementar/qp4_extensoes.json`, que também guarda as medidas brutas e os vereditos. Os `submission.c` originais não são alterados: as alterações são aplicadas a cópias, com cada substituição conferida (exatamente uma ocorrência). Requer `valgrind` (E3) além de `gcc`, `gcov`, `numpy`, `scipy` e `mpmath`. ChatGPT (defeitos D1 e D2) e Gemini (representação com posições fixas no código) ficam fora de E2.
