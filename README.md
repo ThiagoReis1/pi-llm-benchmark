@@ -4,6 +4,8 @@ Benchmark reprodutível para coletar, executar e avaliar implementações em C11
 
 O projeto trata cada arquivo `submission.c` como uma implementação independente. O mesmo nome de algoritmo pode aparecer em mais de uma plataforma, mas os resultados não são misturados: a implementação, a plataforma e a tentativa permanecem identificadas em todos os registros.
 
+> **Escopo do snapshot:** este repositório avalia 20 implementações preservadas, provenientes de uma resposta intencionalmente única por assistente. Os resultados são descritivos dos artefatos observados; não constituem ranking, `pass@k` ou estimativa populacional. As decisões e limitações metodológicas estão registradas em [`protocolo/decisoes_metodologicas.md`](protocolo/decisoes_metodologicas.md).
+
 ## Objetivos
 
 - coletar respostas de diferentes modelos de linguagem usando um prompt único;
@@ -286,9 +288,12 @@ python tools/qp4_extensoes.py . [DIR_ARTIGO] --reanalisar  # recalcula vereditos
 Os critérios de cada experimento estão em [`protocolo/qp4_extensoes_criterios.md`](protocolo/qp4_extensoes_criterios.md), escritos antes de rodar o script. O SHA-256 desse arquivo é gravado em `results/complementar/qp4_extensoes.json`, que também guarda as medidas brutas e os vereditos. Os `submission.c` originais não são alterados: as alterações são aplicadas a cópias, com cada substituição conferida (exatamente uma ocorrência). Requer `valgrind` (E3) além de `gcc`, `gcov`, `numpy`, `scipy` e `mpmath`. ChatGPT (defeitos D1 e D2) e Gemini (representação com posições fixas no código) ficam fora de E2.
 
 
-## Snapshot normativo do artigo corrigido
+## Snapshot dos dados do artigo
 
-O manuscrito corrigido usa o snapshot `v1.2`, commit completo `8b256725a24122c3c8d4fe7950d2da110d279a69`. A tag `v1.1` (`0de1cd7`) é histórica e não deve ser usada como referência da versão atual do artigo.
+Os dados experimentais usados pelo artigo permanecem congelados no snapshot
+`v1.2`, commit `8b256725a24122c3c8d4fe7950d2da110d279a69`. As alterações
+documentais desta atualização não modificam `results/`, `submissions/`, logs ou
+os scripts experimentais.
 
 Para conferir automaticamente os números centrais publicados:
 

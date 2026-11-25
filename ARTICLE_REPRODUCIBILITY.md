@@ -1,13 +1,27 @@
 # Reprodução do artigo
 
-Este repositório contém o snapshot usado pelo manuscrito corrigido.
+Este repositório contém os artefatos usados pelo manuscrito corrigido. O
+snapshot permite reproduzir a avaliação dos códigos preservados; ele não
+reproduz a geração original das respostas dos assistentes.
 
-- Tag normativa: `v1.2`
-- Commit normativo: `8b256725a24122c3c8d4fe7950d2da110d279a69`
+- Snapshot dos dados: `v1.2`
+- Commit dos dados: `8b256725a24122c3c8d4fe7950d2da110d279a69`
+- Esta atualização acrescenta somente documentação; não altera os dados experimentais.
 - Prompt SHA-256: `24176b7827151e9ba319e3ea05a0b33403d8a3e43556896356cf3cd583b2133d`
 - Unidade experimental: implementação (algoritmo + arquivo C) × precisão
 - Respostas preservadas: quatro assistentes, uma tentativa por assistente
 - Configurações decimais únicas: 360
+
+## Decisão de amostragem e interpretação
+
+Foi mantida deliberadamente uma única resposta por assistente devido ao tempo
+disponível para este estudo. As cinco implementações dentro de uma resposta não
+são observações independentes. Portanto, as proporções são descritivas das 20
+implementações preservadas: não há `pass@k`, intervalos de confiança, testes de
+hipótese ou ranking de modelos. Como o prompt deixa cada assistente escolher os
+métodos, origem, método e decisão de implementação também não são fatores
+isolados. A justificativa completa está em
+[`protocolo/decisoes_metodologicas.md`](protocolo/decisoes_metodologicas.md).
 
 ## Verificação rápida
 
@@ -40,4 +54,17 @@ As extensões da QP4 usam os critérios em `protocolo/qp4_extensoes_criterios.md
 
 ## Escopo da evidência
 
-Este pacote torna reproduzível a execução dos códigos preservados. Ele não torna replicável a geração original das respostas dos assistentes: a coleta inicial não registrou de forma completa versão do modelo, parâmetros de amostragem ou ferramentas ativas. Por isso, o artigo não interpreta os quatro resultados como estimativas populacionais nem como ranking de modelos.
+Este pacote torna reproduzível a execução dos códigos preservados, a
+consolidação das repetições, os reparos contrafactuais e as análises
+complementares versionadas. Ele não torna replicável a geração original das
+respostas dos assistentes: a coleta inicial não registrou de forma completa
+versão do modelo, parâmetros de amostragem ou ferramentas ativas. Nenhum
+metadado ausente é reconstruído. As categorias D1--D3 são causas observadas
+nessa amostra, não uma taxonomia universal; as intervenções mostram
+suficiência para D1 e D3, enquanto D2 foi localizada sem reparo completo.
+
+As medidas de custo também têm escopo limitado: `iterations`, `gcov -O0` e
+instruções em `-O2` são proxies distintos, e a latência fim a fim inclui a
+criação do processo. A busca bibliográfica documentada é estruturada, mas não
+é uma revisão sistemática completa; a formulação adequada é que não foi
+identificado trabalho com o mesmo escopo nas buscas realizadas.
